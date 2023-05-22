@@ -9,11 +9,11 @@
 
   <p>This is my blog for my mathematical musings and things I find interesting. I am a mathematics major at Arizona State University.</p>
 
-  <h2>Links:</h2>
-  <ul>
-    <li><a href="cv.html">CV</a></li>
-    <li><a href="research_statement.html">Research Statement</a></li>
-  </ul>
+  
+  
+    <a href="cv.html">CV</a></li>
+    <a href="research_statement.html">Research Statement</a></li> 
+  
 
 </body>
 </html>
