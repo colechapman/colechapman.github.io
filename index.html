@@ -29,6 +29,8 @@
   </ul>
 
   <script>
+    var originalBodyHTML = document.body.innerHTML;
+
     function randomColor() {
       var colors = ['magenta', 'blue', 'red', 'green'];
       return colors[Math.floor(Math.random() * colors.length)];
@@ -65,16 +67,22 @@
         body.style.fontFamily = 'Comic Sans MS';
         body.style.backgroundColor = 'yellow';
         walk(body, function(node) {
-          if (node.nodeType == 3) {
+          if (node.nodeType == 3 && node.nodeValue.trim() !== '' && node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE') {
             colorizeText(node);
           }
         });
         toggleOn.classList.add('hidden');
         toggleOff.classList.remove('hidden');
       } else {
-        location.reload();
+        body.style.fontFamily = '';
+        body.style.backgroundColor = '';
+        body.innerHTML = originalBodyHTML;
+        document.querySelector('button').addEventListener('click', toggleFunMode);
+        toggleOn.classList.remove('hidden');
+        toggleOff.classList.add('hidden');
       }
     }
   </script>
 </body>
 </html>
+
