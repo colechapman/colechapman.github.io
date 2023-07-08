@@ -3,74 +3,75 @@
 <head>
   <title>Cole's Math Blog</title>
   <style>
-    .funMode h1, .funMode h2, .funMode p, .funMode li {
-      font-family: 'Comic Sans MS';
+    .funMode {
+      font-family: 'Comic Sans MS', sans-serif;
+      background-color: yellow;
     }
-    .funMode a {
-      color: inherit;
-      text-decoration: none;
+    .normalMode {
+      font-family: Arial, sans-serif;
+      background-color: '#ADD8E6';
     }
   </style>
 </head>
-  
-<body id="pageBody" onload="toggleFunMode()">
+
+<body id="pageBody" class="normalMode" onload="toggleFunMode()">
 
   <button id="toggleButton" style="position: absolute; top: 0; right: 0;" onclick="toggleFunMode()">Fun Mode</button>
 
-  <h1 id="h1">Cole Chapman</h1>
+  <h1>Cole Chapman</h1>
   <hr>
-  <p id="p">Welcome to my "blog". I am using this website to collect things I find interesting; links to important reference materials, websites and more.. I am currently an undergraduate student at Arizona State University.</p>
+  <p>Welcome to my "blog". I am using this website to collect things I find interesting; links to important reference materials, websites and more.. I am currently an undergraduate student at Arizona State University.</p>
 
-  <h2 id="h2">Links:</h2>
+  <h2>Links:</h2>
   <ul>
-    <li id="li1"><a href="https://www.people.vcu.edu/~rhammack/BookOfProof/">Book of Proof</a></li>
-    <li id="li2"><a href="https://www.dropbox.com/s/5sy7cw01tswzu5b/tx070600718p.pdf?dl=0">Galois Representation</a></li>
-    <li id="li3"><a href="https://publications.ias.edu/rpl">The Work of Robert Langlands</a></li>
+    <li><a href="https://www.people.vcu.edu/~rhammack/BookOfProof/">Book of Proof</a></li>
+    <li><a href="https://www.dropbox.com/s/5sy7cw01tswzu5b/tx070600718p.pdf?dl=0">Galois Representation</a></li>
+    <li><a href="https://publications.ias.edu/rpl">The Work of Robert Langlands</a></li>
   </ul>
 
   <script>
     var funMode = false;
     var colors = ['red', 'green', 'blue', 'magenta'];
-    
+
     function randomColor() {
       return colors[Math.floor(Math.random() * colors.length)];
     }
-    
+
+    function colorizeText(element) {
+      var textNodes = [...element.childNodes].filter(n => n.nodeType === Node.TEXT_NODE);
+
+      textNodes.forEach(textNode => {
+        var coloredText = '';
+        for (var i = 0; i < textNode.textContent.length; i++) {
+          coloredText += `<span style="color: ${randomColor()};">${textNode.textContent[i]}</span>`;
+        }
+
+        textNode.replaceWith(new DOMParser().parseFromString(coloredText, 'text/html').body.childNodes[0]);
+      });
+    }
+
+    function uncolorizeText(element) {
+      element.innerHTML = element.textContent;
+    }
+
     function toggleFunMode() {
       var body = document.getElementById('pageBody');
+      var button = document.getElementById('toggleButton');
       var texts = document.querySelectorAll('h1, h2, p, li');
       funMode = !funMode;
-      
+
       if (funMode) {
-        // apply fun mode styles
-        body.style.backgroundColor = 'yellow';
-        
-        texts.forEach(function(element) {
-          // break down the text to individual letters
-          var text = element.innerText; // use innerText instead of textContent to avoid modifying the <a> tag
-          var coloredText = '';
-          
-          for (var i = 0; i < text.length; i++) {
-            // wrap each letter in a span and assign a random color
-            coloredText += '<span style="color: ' + randomColor() + ';">' + text[i] + '</span>';
-          }
-          
-          // replace the text with colored version
-          element.innerHTML = coloredText;
-        });
+        body.className = 'funMode';
+        button.innerHTML = "Normal Mode";
+        texts.forEach(element => colorizeText(element));
       } else {
-        // revert to normal mode
-        body.style.backgroundColor = '#ADD8E6';
-        
-        texts.forEach(function(element) {
-          // remove color styles
-          element.innerHTML = element.textContent;
-        });
+        body.className = 'normalMode';
+        button.innerHTML = "Fun Mode";
+        texts.forEach(element => uncolorizeText(element));
       }
     }
   </script>
 
 </body>
 </html>
-
 
