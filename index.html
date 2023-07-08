@@ -13,8 +13,8 @@
   <div style="display: flex; justify-content: right; position: absolute; right: 0px;">
     Fun mode&nbsp
     <button style="background-color: #0000; padding: 0px; border-style: none; cursor: pointer;" onclick="toggleFunMode();">
-      <img id="toggle-on" style="max-height: 20px;" src="/toggle-on.png" />
-      <img class="hidden" id="toggle-off" style="max-height: 20px;" src="/toggle-off.png" />
+      <img class="hidden" id="toggle-on" style="max-height: 20px;" src="/toggle-on.png" />
+      <img id="toggle-off" style="max-height: 20px;" src="/toggle-off.png" />
     </button>
   </div>
   <h1>Cole Chapman</h1>
@@ -63,7 +63,14 @@
       var body = document.body;
       var toggleOn = document.getElementById('toggle-on');
       var toggleOff = document.getElementById('toggle-off');
-      if (body.style.fontFamily !== 'Comic Sans MS') {
+      if (body.style.fontFamily !== '') {
+        body.style.fontFamily = '';
+        body.style.backgroundColor = '';
+        body.innerHTML = originalBodyHTML;
+        document.querySelector('button').addEventListener('click', toggleFunMode);
+        toggleOn.classList.remove('hidden');
+        toggleOff.classList.add('hidden');
+      } else {
         body.style.fontFamily = 'Comic Sans MS';
         body.style.backgroundColor = 'yellow';
         walk(body, function(node) {
@@ -73,14 +80,11 @@
         });
         toggleOn.classList.add('hidden');
         toggleOff.classList.remove('hidden');
-      } else {
-        body.style.fontFamily = '';
-        body.style.backgroundColor = '';
-        body.innerHTML = originalBodyHTML;
-        document.querySelector('button').addEventListener('click', toggleFunMode);
-        toggleOn.classList.remove('hidden');
-        toggleOff.classList.add('hidden');
       }
+    }
+
+    window.onload = function() {
+      toggleFunMode();
     }
   </script>
 </body>
