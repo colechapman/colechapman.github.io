@@ -2,13 +2,17 @@
 <html>
 <head>
   <title>Cole's Math Blog</title>
+  <style>
+    #funButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
 </head>
   
-  <BODY BGCOLOR="#ADD8E6" TEXT="#000000" LINK = "#0303E5"
- VLINK = "#0303E5" ALINK = "#0303E5">
-  
-<body>
-
+<body bgcolor="#ADD8E6" text="#000000" link="#0303E5" vlink="#0303E5" alink="#0303E5">
+  <button id="funButton">Fun</button>
   <h1>Cole Chapman</h1>
   <hr>
   <p>Welcome to my "blog". I am using this website to collect things I find interesting; links to important reference materials, websites and more.. I am currently an undergraduate student at Arizona State University.</p>
@@ -17,9 +21,17 @@
   <ul>
     <li><a href="https://www.people.vcu.edu/~rhammack/BookOfProof/">Book of Proof</a></li>
     <li><a href="https://www.dropbox.com/s/5sy7cw01tswzu5b/tx070600718p.pdf?dl=0">Galois Representation</a></li>
-    
+    <li><a href="https://publications.ias.edu/rpl">The Work of Robert Langlands</a></li>
   </ul>
 
+  <script>
+    document.getElementById('funButton').addEventListener('click', function() {
+      document.body.style.fontFamily = 'Comic Sans MS';
+      document.body.style.color = 'magenta';
+      document.body.style.backgroundColor = 'yellow';
+    });
+  </script>
 </body>
 </html>
+
 
