@@ -3,13 +3,20 @@
 <head>
   <title>Cole's Math Blog</title>
   <style>
+    body.serious {
+      font-family: serif;
+      background-color: white;
+    }
+    body.serious span {
+      color: black !important;
+    }
     .hidden {
       display: none;
     }
   </style>
 </head>
   
-<body bgcolor="#ADD8E6" text="#000000" link="#0303E5" vlink="#0303E5" alink="#0303E5">
+<body onload="toggleFunMode()">
   <div style="display: flex; justify-content: right; position: absolute; right: 0px;">
     Fun mode&nbsp
     <button style="background-color: #0000; padding: 0px; border-style: none; cursor: pointer;" onclick="toggleFunMode();">
@@ -29,62 +36,13 @@
   </ul>
 
   <script>
-    var originalBodyHTML = document.body.innerHTML;
-
-    function randomColor() {
-      var colors = ['magenta', 'blue', 'red', 'green'];
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    function colorizeText(node) {
-      var text = node.nodeValue;
-      var coloredText = '';
-      for (var i = 0; i < text.length; i++) {
-        coloredText += '<span style="color: ' + randomColor() + '">' + text[i] + '</span>';
-      }
-      var div = document.createElement('div');
-      div.innerHTML = coloredText;
-      while (div.firstChild) {
-        node.parentNode.insertBefore(div.firstChild, node);
-      }
-      node.parentNode.removeChild(node);
-    }
-
-    function walk(node, func) {
-      func(node);
-      node = node.firstChild;
-      while (node) {
-        walk(node, func);
-        node = node.nextSibling;
-      }
-    }
-
     function toggleFunMode() {
       var body = document.body;
       var toggleOn = document.getElementById('toggle-on');
       var toggleOff = document.getElementById('toggle-off');
-      if (body.style.fontFamily === 'Comic Sans MS') {
-        body.style.fontFamily = '';
-        body.style.backgroundColor = '';
-        body.innerHTML = originalBodyHTML;
-        document.querySelector('button').addEventListener('click', toggleFunMode);
-        toggleOn.classList.remove('hidden');
-        toggleOff.classList.add('hidden');
-      } else {
-        body.style.fontFamily = 'Comic Sans MS';
-        body.style.backgroundColor = 'yellow';
-        walk(body, function(node) {
-          if (node.nodeType == 3 && node.nodeValue.trim() !== '' && node.parentNode.tagName !== 'SCRIPT' && node.parentNode.tagName !== 'STYLE') {
-            colorizeText(node);
-          }
-        });
-        toggleOn.classList.add('hidden');
-        toggleOff.classList.remove('hidden');
-      }
-    }
-
-    window.onload = function() {
-      toggleFunMode();
+      body.classList.toggle('serious');
+      toggleOn.classList.toggle('hidden');
+      toggleOff.classList.toggle('hidden');
     }
   </script>
 </body>
