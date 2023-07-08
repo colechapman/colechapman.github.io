@@ -3,24 +3,21 @@
 <head>
   <title>Cole's Math Blog</title>
   <style>
-    body.serious {
-      font-family: serif;
-      background-color: white;
+    /* define classes for fun mode */
+    .funMode {
+      background-color: yellow;
     }
-    body.serious span {
-      color: black !important;
-    }
-    .hidden {
-      display: none;
+    .funMode h1, .funMode h2, .funMode p, .funMode li {
+      font-family: 'Comic Sans MS';
+      color: red; /* will be overwritten by JS */
     }
   </style>
 </head>
   
-<body onload="toggleFunMode()">
-  <div style="display: flex; justify-content: right; position: absolute; right :0px;">
-          Fun mode&nbsp
-          <button style="background-color: #0000; padding: 0px; border-style: none; cursor: pointer;" onclick="document.body.classList.toggle('serious'); document.getElementById('toggle-on').classList.toggle('hidden'); document.getElementById('toggle-off').classList.toggle('hidden'); " ><img id="toggle-on" style="max-height: 20px;" src="/toggle-on.png" /><img class="hidden" id="toggle-off" style="max-height: 20px;" src="/toggle-off.png" /></button>
-        </div>
+<body id="pageBody" onload="toggleFunMode()" style="background-color:#ADD8E6; color:#000000;">
+
+  <button id="toggleButton" style="position: absolute; top: 0; right: 0;" onclick="toggleFunMode()">Fun Mode</button>
+
   <h1>Cole Chapman</h1>
   <hr>
   <p>Welcome to my "blog". I am using this website to collect things I find interesting; links to important reference materials, websites and more.. I am currently an undergraduate student at Arizona State University.</p>
@@ -33,14 +30,35 @@
   </ul>
 
   <script>
+    var funMode = false;
+    var colors = ['red', 'green', 'blue', 'magenta'];
+    
     function toggleFunMode() {
-      var body = document.body;
-      var toggleOn = document.getElementById('toggle-on');
-      var toggleOff = document.getElementById('toggle-off');
-      body.classList.toggle('serious');
-      toggleOn.classList.toggle('hidden');
-      toggleOff.classList.toggle('hidden');
+      var body = document.getElementById('pageBody');
+      var texts = document.querySelectorAll('h1, h2, p, li');
+      
+      funMode = !funMode;
+      
+      if (funMode) {
+        // apply fun mode styles
+        body.className = 'funMode';
+        
+        texts.forEach(function(element) {
+          element.style.color = colors[Math.floor(Math.random() * colors.length)];
+        });
+      } else {
+        // revert to normal mode
+        body.removeAttribute('class');
+        body.style.backgroundColor = '#ADD8E6';
+        
+        texts.forEach(function(element) {
+          element.style.color = '#000000';
+          element.style.fontFamily = 'inherit';
+        });
+      }
     }
   </script>
+
 </body>
 </html>
+
