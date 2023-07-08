@@ -13,7 +13,7 @@
     }
   </style>
 </head>
-
+  
 <body id="pageBody" class="normalMode" onload="toggleFunMode()">
 
   <button id="toggleButton" style="position: absolute; top: 0; right: 0;" onclick="toggleFunMode()">Fun Mode</button>
@@ -38,40 +38,50 @@
     }
 
     function colorizeText(element) {
-      var textNodes = [...element.childNodes].filter(n => n.nodeType === Node.TEXT_NODE);
+      var childNodes = [...element.childNodes];
 
-      textNodes.forEach(textNode => {
-        var coloredText = '';
-        for (var i = 0; i < textNode.textContent.length; i++) {
-          coloredText += `<span style="color: ${randomColor()};">${textNode.textContent[i]}</span>`;
-        }
+      childNodes.forEach(childNode => {
+        if (childNode.nodeType === Node.TEXT_NODE) {
+          var textNode = childNode;
+          var coloredText = '';
 
-        let tempDiv = document.createElement('div');
-        tempDiv.innerHTML = coloredText;
-        while (tempDiv.firstChild) {
-          textNode.parentNode.insertBefore(tempDiv.firstChild, textNode);
+          for (var i = 0; i < textNode.textContent.length; i++) {
+            coloredText += `<span style="color: ${randomColor()};">${textNode.textContent[i]}</span>`;
+          }
+
+          let tempDiv = document.createElement('div');
+          tempDiv.innerHTML = coloredText;
+          while (tempDiv.firstChild) {
+            textNode.parentNode.insertBefore(tempDiv.firstChild, textNode);
+          }
+          textNode.remove();
         }
-        textNode.remove();
       });
     }
 
     function uncolorizeText(element) {
-      element.innerHTML = element.textContent;
+      var childNodes = [...element.childNodes];
+
+      childNodes.forEach(childNode => {
+        if (childNode.nodeType === Node.ELEMENT_NODE && childNode.tagName !== 'A') {
+          childNode.parentNode.replaceChild(document.createTextNode(childNode.textContent), childNode);
+        }
+      });
     }
 
     function toggleFunMode() {
       var body = document.getElementById('pageBody');
       var button = document.getElementById('toggleButton');
-      var texts = document.querySelectorAll('h1, h2, p, li');
+      var texts = document.querySelectorAll('h1, h2, p');
       funMode = !funMode;
 
       if (funMode) {
         body.className = 'funMode';
-        button.innerHTML = "Normal Mode";
+        button.innerHTML = 'Normal Mode';
         texts.forEach(element => colorizeText(element));
       } else {
         body.className = 'normalMode';
-        button.innerHTML = "Fun Mode";
+        button.innerHTML = 'Fun Mode';
         texts.forEach(element => uncolorizeText(element));
       }
     }
@@ -79,4 +89,5 @@
 
 </body>
 </html>
+
 
