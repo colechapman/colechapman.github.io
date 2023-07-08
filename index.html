@@ -46,7 +46,12 @@
           coloredText += `<span style="color: ${randomColor()};">${textNode.textContent[i]}</span>`;
         }
 
-        textNode.replaceWith(new DOMParser().parseFromString(coloredText, 'text/html').body.childNodes[0]);
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = coloredText;
+        while (tempDiv.firstChild) {
+          textNode.parentNode.insertBefore(tempDiv.firstChild, textNode);
+        }
+        textNode.remove();
       });
     }
 
