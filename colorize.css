@@ -1,0 +1,7 @@
+a:hover {text-decoration: overline;}
+@font-face {
+    font-family: Comic;
+    src: url(ComicSansMSRegular.ttf);
+    font-weight:400;
+}
+body { font-family: Comic; background-color: #ffff99;}
