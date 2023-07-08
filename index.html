@@ -3,17 +3,17 @@
 <head>
   <title>Cole's Math Blog</title>
   <style>
-    .funMode {
-      background-color: yellow;
-      color: red; /* default color if something goes wrong */
-    }
     .funMode h1, .funMode h2, .funMode p, .funMode li {
       font-family: 'Comic Sans MS';
+    }
+    .funMode a {
+      color: inherit;
+      text-decoration: none;
     }
   </style>
 </head>
   
-<body id="pageBody" onload="toggleFunMode()" style="background-color:#ADD8E6; color:#000000;">
+<body id="pageBody" onload="toggleFunMode()">
 
   <button id="toggleButton" style="position: absolute; top: 0; right: 0;" onclick="toggleFunMode()">Fun Mode</button>
 
@@ -43,11 +43,11 @@
       
       if (funMode) {
         // apply fun mode styles
-        body.className = 'funMode';
+        body.style.backgroundColor = 'yellow';
         
         texts.forEach(function(element) {
           // break down the text to individual letters
-          var text = element.textContent;
+          var text = element.innerText; // use innerText instead of textContent to avoid modifying the <a> tag
           var coloredText = '';
           
           for (var i = 0; i < text.length; i++) {
@@ -60,7 +60,6 @@
         });
       } else {
         // revert to normal mode
-        body.removeAttribute('class');
         body.style.backgroundColor = '#ADD8E6';
         
         texts.forEach(function(element) {
