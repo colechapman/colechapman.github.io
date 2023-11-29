@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Energy Consumption Calculator</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="number"] {
+            margin-bottom: 10px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Energy Consumption Calculator</h2>
+    <form id="energyForm">
+        <label for="oven">Oven usage (in hours):</label>
+        <input type="number" id="oven" name="oven" min="0"><br>
+
+        <label for="microwave">Microwave usage (in hours):</label>
+        <input type="number" id="microwave" name="microwave" min="0"><br>
+
+        <!-- Add fields for other appliances -->
+
+        <label for="tv">TV usage (in hours):</label>
+        <input type="number" id="tv" name="tv" min="0"><br>
+
+        <label for="lighting">Lighting (in hours):</label>
+        <input type="number" id="lighting" name="lighting" min="0"><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        // JavaScript for calculation
+        document.getElementById('energyForm').onsubmit = function(event){
+            event.preventDefault();
+
+            var ovenHours = parseFloat(document.getElementById('oven').value) || 0;
+            var microwaveHours = parseFloat(document.getElementById('microwave').value) || 0;
+            var tvHours = parseFloat(document.getElementById('tv').value) || 0;
+            var lightingHours = parseFloat(document.getElementById('lighting').value) || 0;
+
+            // Energy consumption values in kWh per hour
+            var ovenEnergy = ovenHours * 1.5; // average oven uses about 1.5 kWh per hour
+            var microwaveEnergy = microwaveHours * 1.2; // average microwave uses about 1.2 kWh per hour
+            var tvEnergy = tvHours * 0.1; // average TV uses about 0.1 kWh per hour
+            var lightingEnergy = lightingHours * 0.06; // average lighting uses about 0.06 kWh per hour
+
+            var totalEnergy = ovenEnergy + microwaveEnergy + tvEnergy + lightingEnergy;
+
+            document.getElementById('result').innerHTML = 'Estimated Daily Energy Consumption: ' + totalEnergy.toFixed(2) + ' kWh';
+        };
+    </script>
+</body>
+</html>
 
