@@ -5,32 +5,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #e6f2ff; /* Soft blue background */
-            color: #333333; /* Dark text for readability */
+            background-color: #e6f2ff;
+            color: #333333;
             padding: 20px;
         }
 
         h2 {
-            color: #0056b3; /* Deep blue for heading */
+            color: #0056b3;
         }
 
         .input-group {
-            background-color: #ffffff; /* White background for input groups */
+            background-color: #ffffff;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-bottom: 15px;
         }
 
         .input-group label {
             display: block;
             margin-bottom: 5px;
-        }
-
-        .input-group img {
-            width: 24px; /* Adjust icon size */
-            vertical-align: middle;
-            margin-right: 8px;
         }
 
         input[type="number"] {
@@ -40,7 +34,7 @@
         }
 
         input[type="submit"] {
-            background-color: #0047ab; /* Consistent theme color */
+            background-color: #0047ab;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -50,7 +44,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #003366; /* Darker blue on hover */
+            background-color: #003366;
         }
 
         #result {
@@ -58,51 +52,100 @@
             font-weight: bold;
             color: #0047ab;
         }
+
+        .footer-banner {
+            background-color: #0047ab;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <h2>Energy Consumption Calculator</h2>
     <form id="energyForm">
-        <!-- Input for Oven -->
+        <!-- Oven Usage -->
         <div class="input-group">
-            <label for="oven"><img src="path/to/oven-icon.jpeg" alt="Oven Icon"> Oven usage (in hours):</label>
+            <label for="oven">Oven usage (in hours):</label>
             <input type="number" id="oven" name="oven" min="0">
         </div>
 
-        <!-- Add additional divs for appliances and activities -->
-        <!-- Example: Refrigerator -->
+        <!-- Add additional input fields for other appliances -->
+        <!-- Refrigerator -->
         <div class="input-group">
-            <label for="refrigerator"><img src="path/to/fridge-icon.jpeg" alt="Refrigerator Icon"> Refrigerator (in hours, usually 24 for constant usage):</label>
+            <label for="refrigerator">Refrigerator (in hours, usually 24 for constant usage):</label>
             <input type="number" id="refrigerator" name="refrigerator" min="0">
         </div>
 
-        <!-- Include more fields as needed -->
+        <!-- Washing Machine -->
+        <div class="input-group">
+            <label for="washingMachine">Washing Machine (in loads):</label>
+            <input type="number" id="washingMachine" name="washingMachine" min="0">
+        </div>
+
+        <!-- Air Conditioner -->
+        <div class="input-group">
+            <label for="airConditioner">Air Conditioner (in hours):</label>
+            <input type="number" id="airConditioner" name="airConditioner" min="0">
+        </div>
+
+        <!-- Computer -->
+        <div class="input-group">
+            <label for="computer">Computer usage (in hours):</label>
+            <input type="number" id="computer" name="computer" min="0">
+        </div>
+
+        <!-- Lighting -->
+        <div class="input-group">
+            <label for="lighting">Lighting (in hours):</label>
+            <input type="number" id="lighting" name="lighting" min="0">
+        </div>
+
+        <!-- TV -->
+        <div class="input-group">
+            <label for="tv">TV usage (in hours):</label>
+            <input type="number" id="tv" name="tv" min="0">
+        </div>
 
         <input type="submit" value="Calculate">
     </form>
 
     <div id="result"></div>
 
+    <div class="footer-banner">
+        Thank you, Professor Timmes!
+    </div>
+
     <script>
         document.getElementById('energyForm').onsubmit = function(event){
             event.preventDefault();
 
-            // Retrieve values and convert to float, default to 0 if empty
+            // Retrieve values
             var ovenHours = parseFloat(document.getElementById('oven').value) || 0;
-            var refrigeratorHours = parseFloat(document.getElementById('refrigerator').value) || 24; // Default to 24 hours for continuous appliances
-
-            // Add similar lines for other inputs
+            var refrigeratorHours = parseFloat(document.getElementById('refrigerator').value) || 24;
+            var washingMachineLoads = parseFloat(document.getElementById('washingMachine').value) || 0;
+            var airConditionerHours = parseFloat(document.getElementById('airConditioner').value) || 0;
+            var computerHours = parseFloat(document.getElementById('computer').value) || 0;
+            var lightingHours = parseFloat(document.getElementById('lighting').value) || 0;
+            var tvHours = parseFloat(document.getElementById('tv').value) || 0;
 
             // Energy calculations (in kWh)
             var ovenEnergy = ovenHours * 1.5; // average oven
             var refrigeratorEnergy = refrigeratorHours * 0.15; // average refrigerator
+            var washingMachineEnergy = washingMachineLoads * 0.5; // average per load
+            var airConditionerEnergy = airConditionerHours * 3; // average per hour
+            var computerEnergy = computerHours * 0.06; // average laptop
+            var lightingEnergy = lightingHours * 0.01; // average LED bulb
+            var tvEnergy = tvHours * 0.1; // average TV
 
-            // Calculate total energy
-            var totalEnergy = ovenEnergy + refrigeratorEnergy;
+            // Total energy
+            var totalEnergy = ovenEnergy + refrigeratorEnergy + washingMachineEnergy + airConditionerEnergy + computerEnergy + lightingEnergy + tvEnergy;
 
-            // Display result
             document.getElementById('result').innerHTML = 'Estimated Daily Energy Consumption: ' + totalEnergy.toFixed(2) + ' kWh';
         };
     </script>
 </body>
 </html>
+
