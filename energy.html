@@ -66,44 +66,43 @@
 <body>
     <h2>Daily Energy Consumption Calculator</h2>
     <form id="energyForm">
-        <!-- Oven Usage -->
+        
         <div class="input-group">
             <label for="oven">Oven usage (in hours):</label>
             <input type="number" id="oven" name="oven" min="0">
         </div>
 
-        <!-- Add additional input fields for other appliances -->
-        <!-- Refrigerator -->
+        
         <div class="input-group">
             <label for="refrigerator">Refrigerator (in hours, usually 24 for constant usage):</label>
             <input type="number" id="refrigerator" name="refrigerator" min="0">
         </div>
 
-        <!-- Washing Machine -->
+        
         <div class="input-group">
             <label for="washingMachine">Washing Machine (in loads):</label>
             <input type="number" id="washingMachine" name="washingMachine" min="0">
         </div>
 
-        <!-- Air Conditioner -->
+        
         <div class="input-group">
             <label for="airConditioner">Air Conditioner (in hours):</label>
             <input type="number" id="airConditioner" name="airConditioner" min="0">
         </div>
 
-        <!-- Computer -->
+        
         <div class="input-group">
             <label for="computer">Computer usage (in hours):</label>
             <input type="number" id="computer" name="computer" min="0">
         </div>
 
-        <!-- Lighting -->
+        
         <div class="input-group">
             <label for="lighting">Lighting (in hours):</label>
             <input type="number" id="lighting" name="lighting" min="0">
         </div>
 
-        <!-- TV -->
+        
         <div class="input-group">
             <label for="tv">TV usage (in hours):</label>
             <input type="number" id="tv" name="tv" min="0">
@@ -122,7 +121,7 @@
         document.getElementById('energyForm').onsubmit = function(event){
             event.preventDefault();
 
-            // Retrieve values
+            // Retrieve val
             var ovenHours = parseFloat(document.getElementById('oven').value) || 0;
             var refrigeratorHours = parseFloat(document.getElementById('refrigerator').value) || 24;
             var washingMachineLoads = parseFloat(document.getElementById('washingMachine').value) || 0;
