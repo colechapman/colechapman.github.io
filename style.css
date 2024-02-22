@@ -3,127 +3,43 @@
     src: url('./templeos_font.ttf') format('truetype');
 }
 
-:root {
-    --background-primary: #FFFFF0; /* Pearl color background as the main background */
-    --color-primary: black;
-    --color-secondary: rgb(55, 55, 55);
-    --color-dash: #99acad;
-    --color-hover: #9bb1ff; /* Color for hover states */
-    --box-shadow: rgba(0, 0, 0, 0.1); /* Softer shadow for a more modern look */
-    --border: 1px solid var(--color-dash); /* Subtle border color */
-    --border-radius: 10px; /* Rounded corners for boxes */
-}
-
-html, body {
-    background: var(--background-primary);
-    color: var(--color-primary);
+body {
     font-family: 'TempleOS', monospace;
+    background-color: #FFFFF0; /* Pearl color background */
     margin: 0;
     padding: 0;
-    height: 100%; /* Full height */
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
-
-body::-webkit-scrollbar {
-    width: 0; /* Hide scrollbar for Chrome, Safari and Opera */
-    height: 0;
-}
-
 /* Navigation Bar Styles */
 nav {
-    position: fixed;
+    position: fixed; /* Adjust as needed */
     top: 0;
-    width: 100%; /* Full width */
-    background-color: var(--background-primary);
-    padding: 10px 20px;
-    box-shadow: var(--box-shadow);
-    z-index: 1000;
+    left: 0;
+    padding: 20px;
 }
 
 .side-buttons {
     list-style-type: none;
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 10px; /* Space between buttons */
     padding: 0;
-    margin: 0;
 }
 
 .side-buttons li a {
+    display: block;
     text-decoration: none;
-    color: var(--color-primary);
-    padding: 10px 15px;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    transition: all 0.3s ease;
+    color: black; /* Default link color */
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
 /* Hover Effect */
 .side-buttons li a:hover {
-    color: var(--color-hover);
-    background-color: var(--color-primary);
-    border-color: var(--color-hover);
+    color: #9bb1ff; /* Color changes when you hover */
 }
-
-/* Main Content Styles */
 .main-content {
+    margin-left: 150px; /* Ensure this does not overlap with your nav bar */
     padding: 20px;
-    margin-top: 60px; /* Give space for the fixed navbar */
-    max-width: 800px; /* Maximum width of the main content area */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff; /* White background for content */
-    border: var(--border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
 }
 
-h1, h2, p {
-    margin: 10px 0; /* Spacing between text elements */
-}
-
-h1 {
-    font-size: 1.75em; /* Smaller font size for title */
-}
-
-p {
-    font-size: 1em; /* Standard size for paragraph */
-}
-
-/* Apply consistent padding and margin to the sections */
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-bottom: var(--border);
-}
-
-/* Footer Styles */
-footer {
-    padding: 20px;
-    text-align: center;
-    font-size: 0.85em;
-}
-
-/* Additional Element Styles */
-.clickable:hover, .credit:hover {
-    color: var(--color-hover);
-}
-
-/* Adjustments for responsive design */
-@media (max-width: 768px) {
-    .side-buttons {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
-        align-items: center; /* Center buttons */
-    }
-
-    .main-content, nav {
-        padding: 10px; /* Less padding on smaller screens */
-    }
-
-    .main-content {
-        margin-top: 50px; /* Adjust top margin for smaller screens */
-    }
+h1, p {
+    color: #333; /* Dark grey for readability */
 }
 
