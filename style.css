@@ -1,3 +1,35 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('templeos_font.ttf') format('truetype');
+}
+
+.side-buttons {
+    list-style: none;
+    position: fixed; /* Or absolute, depending on your layout */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+}
+
+.side-buttons li {
+    margin: 10px 0;
+}
+
+.side-buttons li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 5px;
+    border: solid 2px black; /* Optional: adjust border thickness */
+    border-radius: 5px; /* Optional: if you want rounded corners */
+}
+
+/* Hover effect for buttons */
+.side-buttons li a:hover {
+    background-color: black;
+    color: white;
+}
 body {
     display: flex;
     justify-content: center;
