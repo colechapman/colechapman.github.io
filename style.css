@@ -1,48 +1,44 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('templeos_font.ttf') format('truetype');
+    font-family: 'TempleOS';
+    src: url('./templeos_font.ttf') format('truetype');
+}
+
+body {
+    font-family: 'TempleOS', monospace;
+    background-color: #FFFFF0; /* Pearl color background */
+    margin: 0;
+    padding: 0;
+}
+/* Navigation Bar Styles */
+nav {
+    position: fixed; /* Adjust as needed */
+    top: 0;
+    left: 0;
+    padding: 20px;
 }
 
 .side-buttons {
-    list-style: none;
-    position: fixed; /* Or absolute, depending on your layout */
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    list-style-type: none;
     padding: 0;
 }
 
-.side-buttons li {
-    margin: 10px 0;
-}
-
 .side-buttons li a {
+    display: block;
     text-decoration: none;
-    color: black;
-    font-size: 16px;
-    padding: 5px;
-    border: solid 2px black; /* Optional: adjust border thickness */
-    border-radius: 5px; /* Optional: if you want rounded corners */
+    color: black; /* Default link color */
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
-/* Hover effect for buttons */
+/* Hover Effect */
 .side-buttons li a:hover {
-    background-color: black;
-    color: white;
+    color: #9bb1ff; /* Color changes when you hover */
 }
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* This makes sure your content is vertically centered in the viewport */
-    margin: 0; /* Removes the default margin */
-    background-color: white;
-    font-family: 'CustomFont', sans-serif;
+.main-content {
+    margin-left: 150px; /* Ensure this does not overlap with your nav bar */
+    padding: 20px;
 }
 
-/* Styling for the main content area */
-.main-content {
-    text-align: center; /* Centers the text within the div */
-    max-width: 80%; /* Limits the width of the content for readability, adjust as needed */
-    margin: 0 auto; /* Adds automatic margin to horizontally center the content, if not already centered by flex */
+h1, p {
+    color: #333; /* Dark grey for readability */
 }
