@@ -42,4 +42,34 @@ nav {
 h1, p {
     color: #333; /* Dark grey for readability */
 }
+/* Apply a max-width and centering to the outer wrapper */
+#outer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Adjust the inner flex container if needed */
+#inner {
+    justify-content: center; /* Center the child elements */
+}
+
+/* Style the main content area */
+#content {
+    background-color: var(--background-reverse); /* Use the reversed background for contrast */
+    color: var(--color-reverse);
+    padding: 20px;
+    margin-top: 20px; /* Add some top margin */
+    box-shadow: var(--box-shadow);
+    border-radius: 10px; /* Optional: if you want rounded corners */
+}
+
+/* If you want to apply the same box shadow to all sections */
+section {
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px; /* Space between sections */
+    padding: 20px;
+    background: white; /* or any color you prefer */
+    border-radius: 5px; /* Rounded corners */
+}
 
