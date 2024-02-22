@@ -1,106 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cole's Math Blog</title>
-  <style>
-    .funMode {
-      font-family: 'Comic Sans MS', sans-serif;
-      background-color: yellow;
-    }
-    .normalMode {
-      font-family: Arial, sans-serif;
-      background-color: lightblue;
-    }
-  </style>
-</head>
-  
-<body id="pageBody" class="normalMode" onload="toggleFunMode()">
+<body>
+    <nav>
+        <ul class="side-buttons">
+            <li><a href="#home">[Home]</a></li>
+            <li><a href="#about">[About Me]</a></li>
+            <li><a href="#links">[Links]</a></li>
+            <li><a href="#projects">[Projects]</a></li>
+        </ul>
+    </nav>
 
-  <button id="toggleButton" style="position: absolute; top: 0; right: 0;" onclick="toggleFunMode()">Fun Mode</button>
+    <!-- Main content area -->
+    <div class="main-content">
+        <h1>Welcome to My Webpage</h1>
+        <p>This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
+    </div>
 
-  <h1>Cole Chapman</h1>
-  <hr>
-  <p>Welcome to my "blog". I am using this website to collect things I find interesting; links to important reference materials, websites and more.. I am currently an undergraduate student at Arizona State University.</p>
-
-  <h2>Spring 2024</h2>
-  <p>
-  Advanced Calculus Resources: 
-
-  Applied Complex Analysis Resources:
-    
-  </p>
-  <h3>Links:</h2>
-  <ul>
-    <li><a href="https://people.math.harvard.edu/~elkies/M55b.17/index.html">Math55b</a></li>
-    <li><a href="https://people.math.harvard.edu/~elkies/M55a.17/index.html">Math55a</a><a/li>
-    <li><a href="https://math.dartmouth.edu/~dana/bookspapers/cstar.pdf">A Very Short Course on C*-Algebras - Dana P. Williams</a></li>
-    <li><a href="https://www.ams.org/journals/notices/201901/rnoti-p16.pdf">Iwasawa Theory: A Climb up the Tower by Romyar Sharifi</a></li>
-    <li><a href="https://www.people.vcu.edu/~rhammack/BookOfProof/">Book of Proof</a></li>
-    <li><a href="https://www.dropbox.com/s/5sy7cw01tswzu5b/tx070600718p.pdf?dl=0">Galois Representation</a></li>
-    <li><a href="https://publications.ias.edu/rpl">The Work of Robert Langlands</a></li>
-    <li><a href="https://math.ou.edu/~kmartin/afrefs.html">Automorphic Forms Online References</li>
-    <li><a href="https://www.dropbox.com/s/zdeprojc8dtagw1/gl2emerton.pdf?dl=0">Classical Modular Forms as Automorphic Forms by Matthew Emerton</li>
-  </ul>
-
-  <script>
-    var funMode = false;
-    var colors = ['red', 'green', 'blue', 'magenta'];
-
-    function randomColor() {
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    function colorizeText(element) {
-      var childNodes = [...element.childNodes];
-
-      childNodes.forEach(childNode => {
-        if (childNode.nodeType === Node.TEXT_NODE) {
-          var textNode = childNode;
-          var coloredText = '';
-
-          for (var i = 0; i < textNode.textContent.length; i++) {
-            coloredText += `<span style="color: ${randomColor()};">${textNode.textContent[i]}</span>`;
-          }
-
-          let tempDiv = document.createElement('div');
-          tempDiv.innerHTML = coloredText;
-          while (tempDiv.firstChild) {
-            textNode.parentNode.insertBefore(tempDiv.firstChild, textNode);
-          }
-          textNode.remove();
-        }
-      });
-    }
-
-    function uncolorizeText(element) {
-      var childNodes = [...element.childNodes];
-
-      childNodes.forEach(childNode => {
-        if (childNode.nodeType === Node.ELEMENT_NODE && childNode.tagName !== 'A') {
-          childNode.parentNode.replaceChild(document.createTextNode(childNode.textContent), childNode);
-        }
-      });
-    }
-
-    function toggleFunMode() {
-      var body = document.getElementById('pageBody');
-      var button = document.getElementById('toggleButton');
-      var texts = document.querySelectorAll('h1, h2, p');
-      funMode = !funMode;
-
-      if (funMode) {
-        body.className = 'funMode';
-        button.innerHTML = 'Normal Mode';
-        texts.forEach(element => colorizeText(element));
-      } else {
-        body.className = 'normalMode';
-        button.innerHTML = 'Fun Mode';
-        texts.forEach(element => uncolorizeText(element));
-      }
-    }
-  </script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
 
 
