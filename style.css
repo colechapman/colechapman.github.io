@@ -1,17 +1,13 @@
-@font-face {
-    font-family: 'TempleOS';
-    src: url('./templeos_font.ttf') format('truetype');
-}
-
 body {
-    font-family: 'TempleOS', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     background-color: #FFFFF0; /* Pearl color background */
     margin: 0;
     padding: 0;
 }
+
 /* Navigation Bar Styles */
 nav {
-    position: fixed; /* Adjust as needed */
+    position: fixed;
     top: 0;
     left: 0;
     padding: 20px;
@@ -25,21 +21,24 @@ nav {
 .side-buttons li a {
     display: block;
     text-decoration: none;
-    color: black; /* Default link color */
+    color: black;
     padding: 10px;
     transition: color 0.3s ease;
 }
 
 /* Hover Effect */
 .side-buttons li a:hover {
-    color: #9bb1ff; /* Color changes when you hover */
+    color: #9bb1ff;
 }
+
 .main-content {
-    margin-left: 150px; /* Ensure this does not overlap with your nav bar */
+    margin: 50px 150px; /* Adjusted margin for centering */
     padding: 20px;
+    border: 2px solid black; /* Black border */
+    border-radius: 10px; /* Smoothed corners */
 }
 
 h1, p {
-    color: #333; /* Dark grey for readability */
+    color: #333;
 }
 
