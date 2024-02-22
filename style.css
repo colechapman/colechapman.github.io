@@ -3,56 +3,76 @@
     src: url('./templeos_font.ttf') format('truetype');
 }
 
-body {
+body, html {
     font-family: 'TempleOS', monospace;
     background-color: #FFFFF0; /* Pearl color background */
     margin: 0;
     padding: 0;
+    height: 100%; /* Full height */
 }
+
+/* Container for all content to add padding */
 .container {
-    max-width: 90%; /* or a specific pixel value like 1200px */
-    margin: 0 auto; /* centers the container */
-    padding: 2% 5%; /* adds spacing inside the container */
+    max-width: 90%; /* Maximum width of the content area */
+    margin: 0 auto; /* Center the content area */
+    padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
-/* Navigation Bar Styles */
-nav {
-    position: fixed; /* Adjust as needed */
+
+/* Navigation bar should also be within the container for consistent alignment */
+nav .container {
+    position: fixed; /* Fix to the top */
     top: 0;
-    left: 0;
-    padding: 20px;
+    width: 100%; /* Full width */
+    background-color: #FFFFF0; /* Match the body background */
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 .side-buttons {
     list-style-type: none;
     padding: 0;
+    margin: 0; /* Remove default margin */
+    display: flex; /* Align side-buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Spacing between buttons */
 }
 
 .side-buttons li a {
-    display: block;
     text-decoration: none;
     color: black; /* Default link color */
     padding: 10px;
     transition: color 0.3s ease;
+    border: 1px solid transparent; /* Add border to maintain layout during hover */
 }
 
 /* Hover Effect */
 .side-buttons li a:hover {
     color: #9bb1ff; /* Color changes when you hover */
+    border-color: #9bb1ff; /* Border color matches hover color */
 }
+
+/* Main content styling */
 .main-content {
-    margin-left: 150px; /* Ensure this does not overlap with your nav bar */
-    padding: 20px;
+    max-width: 800px; /* Set a max-width for the main content */
+    margin: 80px auto 20px; /* Top margin accounts for fixed nav */
+    padding: 20px; /* Padding inside the main content box */
+    background-color: #fff; /* White background for the content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 5px; /* Slightly rounded corners for the content box */
 }
 
 h1 {
-    font-size: 2em; /* Adjust the size as needed */
+    font-size: 1.5em; /* Reduced font size for the main title */
+    margin-bottom: 0.5em; /* Space after the title */
 }
 
-p, a {
-    font-size: 1em; /* Standard size for body text and links */
+p, a, .nav-links {
+    font-size: 0.95em; /* Slightly reduced font size for text and links */
+    line-height: 1.6; /* Improve readability */
 }
 
-/* You may want to add specific classes for navigation links if they need different styling */
+/* Adjust nav links specifically if needed */
 .nav-links {
-    font-size: 0.9em; /* Smaller font size for navigation links */
+    font-size: 0.85em; /* Even smaller font size for navigation links */
 }
+
