@@ -1,29 +1,34 @@
-name: Update Shipping Forecast
+# .github/workflows/scrape_and_update.yml
+name: Scrape and Update Shipping Forecast
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # Runs at 05:00 UTC daily.
-  workflow_dispatch:  # This line enables manual triggering of the workflow.
+    - cron: '0 5 * * *' # Runs every day at 05:00 UTC.
+  workflow_dispatch: # Allows manual triggering from the GitHub UI.
 
 jobs:
-  update-forecast:
+  scrape_and_update:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
-      - name: Install dependencies
-        run: gem install shipping-forecast
-      - name: Generate Forecast Fragment
-        run: ruby update_forecast.rb
-      - name: Update index.html
-        run: bash update_index.sh
-      - name: Commit and Push Updates
+
+      - name: Install Nokogiri
+        run: gem install nokogiri
+
+      - name: Scrape Shipping Forecast
+        run: ruby ./path/to/scrape_forecast.rb # Replace with the actual path to the script
+
+      - name: Commit and push if changes
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          git add index.html
-          git commit -m "Update Shipping Forecast" -a || exit 0
+          git config user.name "colechapman"
+          git config user.email "cole.chapman15@gmail.com"
+          git add data/shipping_forecast.txt
+          git commit -m "Update Shipping Forecast data" -a || echo "No changes to commit"
           git push
