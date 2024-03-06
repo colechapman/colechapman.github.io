@@ -20,8 +20,8 @@
             </ul>
         </nav>
         <div class="main-content">
-            <h1>flash2:wave:welcome to my page!</h1>
-            <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
+             <h1 id="osrs-header">flash2:wave2:welcome to my page!</h1>
+             <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
     <!-- Fetch and insert content into the shipping forecast section -->
@@ -38,7 +38,7 @@
     <script src="os-font.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            OsFont.compile();
+            OsFont.compile(document.getElementById("osrs-header"));
         });
     </script>
 </body>
