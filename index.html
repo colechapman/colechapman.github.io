@@ -5,7 +5,7 @@
     <title>cole chapman</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Include the OSRS Font CSS with the correct path -->
+    <!-- Include the OSRS Font CSS -->
     <link rel="stylesheet" href="OSRS-Font-Parser-master/src/os-font.css" />
 </head>
 <body>
@@ -20,20 +20,17 @@
             </ul>
         </nav>
         <div class="main-content">
-            <!-- Use the correct format for the effects as per OSRS Font Parser -->
-            <h1 id="osrs-header">flash2:wave2:welcome to my page!</h1>
+            <h1 id="osrs-header">flash2:wave:welcome to my page!</h1>
             <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
-    <!-- Include the OSRS Font JS with the correct path -->
+    <!-- Include the OSRS Font JS and initialize the library -->
     <script src="OSRS-Font-Parser-master/src/os-font.js"></script>
     <script>
-        // Correct initialization for OsFont to compile elements with text effects
         document.addEventListener('DOMContentLoaded', () => {
-            OsFont.compile(); // This will apply effects to all eligible elements
+            OsFont.compile();
         });
 
-        // Fetch and insert content into the shipping forecast section
         fetch('data/shipping_forecast.txt')
             .then(response => response.text())
             .then(text => {
