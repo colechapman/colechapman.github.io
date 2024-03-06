@@ -30,12 +30,15 @@
     <!-- Fetch and insert content into the shipping forecast section -->
     <script>
         fetch('data/shipping_forecast.txt')
-            .then(response => response.text())
-            .then(text => {
-                const shippingForecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
-                shippingForecastPlaceholder.innerText = text;
-            })
-            .catch(error => console.error('Error fetching shipping forecast:', error));
+    .then(response => response.text())
+    .then(text => {
+        // Remove newlines and replace them with spaces, then collapse multiple spaces into one.
+        const formattedText = text.replace(/\n+/g, ' ').replace(/\s+/g, ' ');
+        const shippingForecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
+        shippingForecastPlaceholder.innerText = formattedText;
+    })
+    .catch(error => console.error('Error fetching shipping forecast:', error));
+
     </script>
     <!-- Include the OSRS Font JS and initialize the library -->
     <script src="os-font.js"></script>
