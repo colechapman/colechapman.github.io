@@ -23,7 +23,7 @@ jobs:
         run: gem install nokogiri
 
       - name: Scrape Shipping Forecast
-        run: ruby ./path/to/scrape_forecast.rb # Replace with the actual path to the script
+        run: ruby scrape_forecast.rb # Replace with the actual path to the script
 
       - name: Commit and push if changes
         run: |
