@@ -64,30 +64,30 @@ h1, p {
     margin-bottom: 20px; /* Add some spacing on the bottom */
 }
 #shipping-forecast-container {
-    white-space: nowrap;
     overflow: hidden;
-    box-sizing: border-box;
+    white-space: nowrap;
     position: relative;
-    width: 100%; /* or a fixed width, depending on your layout */
+    width: 100%; /* Adjust based on layout */
     height: auto;
 }
 
 #shipping-forecast-placeholder {
     display: inline-block;
-    position: absolute;
+    position: relative;
     white-space: nowrap;
     will-change: transform;
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-horizontal 20s linear infinite;
 }
 
-@keyframes scroll-left {
-    from {
+@keyframes scroll-horizontal {
+    0% {
         transform: translateX(100%);
     }
-    to {
+    100% {
         transform: translateX(-100%);
     }
 }
+
 
 
 
