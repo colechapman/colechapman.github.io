@@ -1,19 +1,19 @@
-/* Define the RuneScape Plain 12 font */
+/* Define the RuneScape Bold 12 font */
 @font-face {
-    font-family: 'RuneScape Plain 12';
-    src: url('./RuneScape-Plain-12.ttf') format('truetype'); /* Adjust the path as needed */
+    font-family: 'RuneScape Bold 12';
+    src: url('./RuneScape-Bold-12.ttf') format('truetype'); /* Adjust the path as needed */
 }
 
 /* CSS for the wavy effect on Welcome! text */
 .animated-text {
     text-align: center;
     font-size: 3em;
-    font-family: 'RuneScape Plain 12', monospace; /* Now using RuneScape Plain 12 */
+    font-family: 'RuneScape Bold 12', monospace; /* Now using RuneScape Bold 12 */
     background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red, violet);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: wave 0.03s infinite linear alternate;
+    animation: wave 0.03s infinite linear alternate; /* Decreased animation duration to 0.5s */
 }
 
 @keyframes wave {
@@ -47,36 +47,5 @@ nav {
 .side-buttons li a {
     display: block;
     text-decoration: none;
-    color: black;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-/* Hover Effect */
-.side-buttons li a:hover {
-    color: #9bb1ff;
-}
-
-.main-content {
-    margin: 50px 150px; /* Adjusted margin for centering */
-    padding: 20px;
-    border: 2px solid black; /* Black border */
-    border-radius: 10px; /* Smoothed corners */
-}
-
-h1, p {
-    color: #333;
-}
-
-/* Center the name */
-.main-content h1 {
-    text-align: center;
-}
-
-/* Additional styles for the shipping forecast textarea */
-#shipping-forecast {
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin-top: 2em;
 }
 
