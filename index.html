@@ -24,13 +24,6 @@
             <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
-    <!-- Include the OSRS Font JS and initialize the library -->
-    <script type="text/javascript" src="os-font.js"></script>
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function () {
-        OsFont.compile();
-    });
-
         fetch('data/shipping_forecast.txt')
             .then(response => response.text())
             .then(text => {
@@ -39,6 +32,11 @@
             })
             .catch(error => console.error('Error fetching shipping forecast:', error));
     </script>
+     <script type="text/javascript" src="os-font.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () {
+        OsFont.compile();
+    });
 </body>
 </html>
 
