@@ -32,12 +32,42 @@
         fetch('data/shipping_forecast.txt')
     .then(response => response.text())
     .then(text => {
-        // Process text for display
-        const formattedText = text.replace(/\n+/g, ' ').replace(/\s+/g, ' ');
+        // Adding markers and replacing newlines with spaces
+        const formattedText = `Start -> ${text.replace(/\n+/g, ' ')} -> End`;
         document.getElementById('shipping-forecast-placeholder').innerText = formattedText;
     })
     .catch(error => console.error('Error fetching shipping forecast:', error));
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const forecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
+        
+        forecastPlaceholder.addEventListener('load', adjustScrollSpeed);
+
+        function adjustScrollSpeed() {
+            const contentWidth = forecastPlaceholder.offsetWidth;
+            const containerWidth = document.getElementById('shipping-forecast-container').offsetWidth;
+            // Assuming a base speed - you might need to adjust this
+            const pixelsPerSecond = 100;
+            const totalWidth = contentWidth + containerWidth;
+            const duration = totalWidth / pixelsPerSecond;
+
+            forecastPlaceholder.style.animationDuration = `${duration}s`;
+        }
+
+        fetch('data/shipping_forecast.txt')
+            .then(response => response.text())
+            .then(text => {
+                // Adding markers and formatting text
+                const formattedText = `Start -> ${text.replace(/\n+/g, ' ').replace(/\s+/g, ' ')} -> End`;
+                forecastPlaceholder.innerText = formattedText;
+
+                // Adjust scroll speed after text is set
+                adjustScrollSpeed();
+            })
+            .catch(error => console.error('Error fetching shipping forecast:', error));
+    });
+</script>
     <!-- Include the OSRS Font JS and initialize the library -->
     <script src="os-font.js"></script>
     <script>
