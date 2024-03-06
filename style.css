@@ -42,3 +42,18 @@ h1, p {
     color: #333;
 }
 
+/* Forecast Content Styles */
+.forecast-content h2 {
+    color: #333; /* Keeping the color consistent with your design */
+    margin-top: 20px;
+}
+
+.forecast-content ul {
+    list-style-type: none; /* Removes the default list styling */
+    padding: 0;
+}
+
+.forecast-content li {
+    margin-bottom: 10px;
+}
+
