@@ -30,22 +30,13 @@
     <!-- Fetch, insert content into the shipping forecast section, and adjust scrolling speed -->
     <script>
         fetch('data/shipping_forecast.txt')
-            .then(response => response.text())
-            .then(text => {
-                // Remove newlines and replace them with spaces, then collapse multiple spaces into one.
-                const formattedText = text.replace(/\n+/g, ' ').replace(/\s+/g, ' ');
-                const shippingForecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
-                shippingForecastPlaceholder.innerText = formattedText;
-
-                // Dynamically adjust scrolling speed based on content width
-                const containerWidth = document.getElementById('shipping-forecast-container').offsetWidth;
-                const contentWidth = shippingForecastPlaceholder.scrollWidth;
-                const baseDuration = 60; // Base duration in seconds for 1000px of content
-                const baseWidth = 1000; // Base width the baseDuration is calculated for
-                const actualDuration = (contentWidth / baseWidth) * baseDuration;
-                shippingForecastPlaceholder.style.animationDuration = `${actualDuration}s`;
-            })
-            .catch(error => console.error('Error fetching shipping forecast:', error));
+    .then(response => response.text())
+    .then(text => {
+        // Process text for display
+        const formattedText = text.replace(/\n+/g, ' ').replace(/\s+/g, ' ');
+        document.getElementById('shipping-forecast-placeholder').innerText = formattedText;
+    })
+    .catch(error => console.error('Error fetching shipping forecast:', error));
     </script>
     <!-- Include the OSRS Font JS and initialize the library -->
     <script src="os-font.js"></script>
