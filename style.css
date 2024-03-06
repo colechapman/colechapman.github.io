@@ -42,11 +42,15 @@ h1, p {
     color: #333;
 }
 
-/* style.css */
-#shipping-forecast {
-  padding: 1em;
-  border: 1px solid #ddd;
-  margin-top: 2em;
+/* Center the name */
+.main-content h1 {
+    text-align: center;
 }
 
+/* Additional styles for the shipping forecast textarea */
+#shipping-forecast {
+    padding: 1em;
+    border: 1px solid #ddd;
+    margin-top: 2em;
+}
 
