@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Include the OSRS Font CSS -->
-    <link rel="stylesheet" href="OSRS-Font-Parser-master/src/os-font.css" />
+    <link rel="stylesheet" href="os-font.css" />
 </head>
 <body>
     <div class="container">
@@ -25,11 +25,9 @@
         </div>
     </div>
     <!-- Include the OSRS Font JS and initialize the library -->
-    <script src="OSRS-Font-Parser-master/src/os-font.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    <script type="text/javascript" src="os-font.js"></script>
+        <script type="text/javascript">
             OsFont.compile();
-        });
 
         fetch('data/shipping_forecast.txt')
             .then(response => response.text())
