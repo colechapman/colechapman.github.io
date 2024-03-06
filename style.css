@@ -1,8 +1,14 @@
+/* Define the RuneScape Plain 12 font */
+@font-face {
+    font-family: 'RuneScape Plain 12';
+    src: url('./RuneScape-Plain-12.ttf') format('truetype'); /* Adjust the path as needed */
+}
+
 /* CSS for the wavy effect on Welcome! text */
 .animated-text {
     text-align: center;
     font-size: 3em;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'RuneScape Plain 12', monospace; /* Now using RuneScape Plain 12 */
     background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red, violet);
     -webkit-background-clip: text;
     background-clip: text;
@@ -16,10 +22,10 @@
     100% { transform: translateY(0); }
 }
 
-/* Rest of your CSS */
+/* Rest of your CSS remains the same */
 
 body {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace; /* Consider changing globally if desired */
     background-color: #FFFFF0; /* Pearl color background */
     margin: 0;
     padding: 0;
@@ -41,35 +47,4 @@ nav {
 .side-buttons li a {
     display: block;
     text-decoration: none;
-    color: black;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
 
-/* Hover Effect */
-.side-buttons li a:hover {
-    color: #9bb1ff;
-}
-
-.main-content {
-    margin: 50px 150px; /* Adjusted margin for centering */
-    padding: 20px;
-    border: 2px solid black; /* Black border */
-    border-radius: 10px; /* Smoothed corners */
-}
-
-h1, p {
-    color: #333;
-}
-
-/* Center the name */
-.main-content h1 {
-    text-align: center;
-}
-
-/* Additional styles for the shipping forecast textarea */
-#shipping-forecast {
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin-top: 2em;
-}
