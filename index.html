@@ -39,35 +39,38 @@
     .catch(error => console.error('Error fetching shipping forecast:', error));
     </script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const forecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
-        
-        forecastPlaceholder.addEventListener('load', adjustScrollSpeed);
-
-        function adjustScrollSpeed() {
-            const contentWidth = forecastPlaceholder.offsetWidth;
-            const containerWidth = document.getElementById('shipping-forecast-container').offsetWidth;
-            // Assuming a base speed - you might need to adjust this
-            const pixelsPerSecond = 100;
-            const totalWidth = contentWidth + containerWidth;
-            const duration = totalWidth / pixelsPerSecond;
-
-            forecastPlaceholder.style.animationDuration = `${duration}s`;
-        }
-
-        fetch('data/shipping_forecast.txt')
-            .then(response => response.text())
-            .then(text => {
-                // Adding markers and formatting text
-                const formattedText = `Start -> ${text.replace(/\n+/g, ' ').replace(/\s+/g, ' ')} -> End`;
-                forecastPlaceholder.innerText = formattedText;
-
-                // Adjust scroll speed after text is set
-                adjustScrollSpeed();
-            })
-            .catch(error => console.error('Error fetching shipping forecast:', error));
-    });
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('data/shipping_forecast.txt')
+        .then(response => response.text())
+        .then(text => {
+            // Split the text into regions using two newlines as a delimiter
+            const regions = text.trim().split('\n\n');
+            let currentRegionIndex = 0;
+            
+            function displayRegion() {
+                // If currentRegionIndex exceeds the number of regions, start over
+                if (currentRegionIndex >= regions.length) {
+                    currentRegionIndex = 0;
+                }
+                
+                // Display the current region's forecast
+                const regionText = regions[currentRegionIndex].replace(/\n/g, '<br>'); // Replace newlines with <br> for HTML display
+                document.getElementById('shipping-forecast-placeholder').innerHTML = regionText;
+                
+                // Move to the next region for the next interval
+                currentRegionIndex++;
+            }
+            
+            // Display the first region immediately
+            displayRegion();
+            
+            // Then set up an interval to cycle through regions every 5 seconds (5000 milliseconds)
+            setInterval(displayRegion, 5000);
+        })
+        .catch(error => console.error('Error fetching shipping forecast:', error));
+});
 </script>
+
     <!-- Include the OSRS Font JS and initialize the library -->
     <script src="os-font.js"></script>
     <script>
