@@ -23,12 +23,14 @@ jobs:
         run: gem install nokogiri
 
       - name: Scrape Shipping Forecast
-        run: ruby scrape_forecast.rb # Replace with the actual path to the script
+        run: ruby scrape_forecast.rb # Ensure this path matches where your script is located in your repo
 
       - name: Commit and push if changes
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # This uses the PAT you stored in your secrets
         run: |
           git config user.name "colechapman"
           git config user.email "cole.chapman15@gmail.com"
           git add data/shipping_forecast.txt
           git commit -m "Update Shipping Forecast data" -a || echo "No changes to commit"
-          git push
+          git push --set-upstream https://${{ github.repository_owner }}:${MY_GITHUB_TOKEN}@github.com/${{ github.repository }}.git ${GITHUB_REF#refs/heads/}
