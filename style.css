@@ -17,9 +17,15 @@
 }
 
 @keyframes wave {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% { transform: translateY(0); color: violet; }
+    12.5% { color: indigo; }
+    25% { color: blue; }
+    37.5% { color: green; }
+    50% { color: yellow; }
+    62.5% { color: orange; }
+    75% { color: red; }
+    87.5% { color: violet; }
+    100% { transform: translateY(0); color: indigo; }
 }
 
 /* Rest of your CSS */
