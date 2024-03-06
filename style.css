@@ -4,7 +4,7 @@
     src: url('./RuneScape-Bold-12.ttf') format('truetype'); /* Adjust the path as needed */
 }
 
-/* Rest of your CSS */
+/* Global Styles */
 body {
     font-family: 'IBM Plex Mono', monospace; /* Consider changing globally if desired */
     background-color: #FFFFF0; /* Pearl color background */
@@ -50,12 +50,6 @@ h1, p {
     text-align: center;
 }
 
-/* Additional styles for the shipping forecast textarea */
-#shipping-forecast {
-    padding: 1em;
-    border: 1px solid #ddd;
-    margin-top: 2em;
-}
 .main-content .osrs-header {
     text-align: center; /* Center the text */
     font-size: 32px; /* Increase font size */
@@ -63,63 +57,26 @@ h1, p {
     margin-top: 20px; /* Add some spacing on the top */
     margin-bottom: 20px; /* Add some spacing on the bottom */
 }
+
+/* Styles for displaying each region's weather */
 #shipping-forecast-container {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%; /* Adjust based on layout */
-    height: auto;
+    padding: 10px;
+    background-color: #f0f0f0; /* Example background color */
+    border: 1px solid #ddd; /* Example border */
+    margin-top: 20px;
 }
 
 #shipping-forecast-placeholder {
-    display: inline-block;
-    position: relative;
-    white-space: nowrap;
-    will-change: transform;
-    animation: scroll-horizontal 80s linear infinite;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; /* Adjust as needed */
+    white-space: pre-line; /* Respects <br> tags for line breaks */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
 }
 
-@keyframes scroll-horizontal {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-
-
-
-
-/* Optional: Comment out or remove if you're using OSRS Font Parser for effects */
-/*
-.animated-text {
-    text-align: center;
-    font-size: 3em;
-    font-family: 'RuneScape Bold 12', monospace;
-    color: transparent;
-    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.char {
-    display: inline-block;
-    animation: wave 2s infinite linear;
-}
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(5px);
-  }
-}
-.char1, .char2, .char3 { animation-delay: var(--delay); }
-*/
 
