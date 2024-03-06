@@ -5,7 +5,7 @@
     <title>cole chapman</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Updated path for the OSRS Font CSS -->
+    <!-- Include the OSRS Font CSS with the correct path -->
     <link rel="stylesheet" href="OSRS-Font-Parser-master/src/os-font.css" />
 </head>
 <body>
@@ -20,18 +20,20 @@
             </ul>
         </nav>
         <div class="main-content">
-            <h1 id="osrs-header">wave2:glow2:welcome to my page!</h1>
+            <!-- Use the correct format for the effects as per OSRS Font Parser -->
+            <h1 id="osrs-header">flash2:wave2:welcome to my page!</h1>
             <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
-    <!-- Updated path for the OSRS Font JS -->
+    <!-- Include the OSRS Font JS with the correct path -->
     <script src="OSRS-Font-Parser-master/src/os-font.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            OsFont.compile(document.getElementById("osrs-header"));
+        // Correct initialization for OsFont to compile elements with text effects
+        document.addEventListener('DOMContentLoaded', () => {
+            OsFont.compile(); // This will apply effects to all eligible elements
         });
 
-        // Fetch and insert the shipping forecast content
+        // Fetch and insert content into the shipping forecast section
         fetch('data/shipping_forecast.txt')
             .then(response => response.text())
             .then(text => {
