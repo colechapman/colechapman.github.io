@@ -56,13 +56,14 @@ h1, p {
     border: 1px solid #ddd;
     margin-top: 2em;
 }
-.osrs-header {
+.main-content .osrs-header {
     text-align: center; /* Center the text */
     font-size: 32px; /* Increase font size */
     font-weight: bold; /* Make the text bold */
     margin-top: 20px; /* Add some spacing on the top */
     margin-bottom: 20px; /* Add some spacing on the bottom */
 }
+
 
 /* Optional: Comment out or remove if you're using OSRS Font Parser for effects */
 /*
