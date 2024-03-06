@@ -4,38 +4,7 @@
     src: url('./RuneScape-Bold-12.ttf') format('truetype'); /* Adjust the path as needed */
 }
 
-/* CSS for the wavy effect on Welcome! text */
-.animated-text {
-    text-align: center;
-    font-size: 3em;
-    font-family: 'RuneScape Bold 12', monospace; /* Now using RuneScape Bold 12 */
-    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: wave 1s infinite linear alternate; /* Decreased animation duration to 0.5s */
-}
-
-@keyframes wave {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 /* Rest of your CSS */
-
 body {
     font-family: 'IBM Plex Mono', monospace; /* Consider changing globally if desired */
     background-color: #FFFFF0; /* Pearl color background */
@@ -59,6 +28,9 @@ nav {
 .side-buttons li a {
     display: block;
     text-decoration: none;
+    color: black;
+    padding: 10px;
+    transition: color 0.3s ease;
 }
 
 /* Main Content Styles */
@@ -84,3 +56,43 @@ h1, p {
     border: 1px solid #ddd;
     margin-top: 2em;
 }
+
+/* CSS for the wavy effect on header text */
+.animated-text {
+    text-align: center;
+    font-size: 3em;
+    font-family: 'RuneScape Bold 12', monospace; /* Using RuneScape Bold 12 */
+    color: transparent;
+    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Apply the wave effect to individual characters */
+.char {
+    display: inline-block;
+    animation: wave 2s infinite linear;
+}
+
+/* Create the wave animation effect */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+}
+
+/* Set up the individual character animations */
+.char1 { animation-delay: 0s; }
+.char2 { animation-delay: 0.1s; }
+.char3 { animation-delay: 0.2s; }
+/* Continue to add delays for each additional character as necessary */
