@@ -76,7 +76,7 @@ h1, p {
     position: relative;
     white-space: nowrap;
     will-change: transform;
-    animation: scroll-horizontal 20s linear infinite;
+    animation: scroll-horizontal 80s linear infinite;
 }
 
 @keyframes scroll-horizontal {
