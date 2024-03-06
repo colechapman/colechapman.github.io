@@ -19,8 +19,7 @@
         </nav>
         <div class="main-content">
             <h1>cole chapman</h1>
-            <p>This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
-            <textarea id="shipping-forecast" rows="10" cols="50"></textarea>
+            <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
     <script>
@@ -28,12 +27,13 @@
       fetch('data/shipping_forecast.txt')
         .then(response => response.text())
         .then(text => {
-          // Find the textarea element where you want to insert the forecast
-          const shippingForecastTextarea = document.getElementById('shipping-forecast');
-          // Set the text content of the textarea to the fetched forecast text
-          shippingForecastTextarea.value = text;
+          // Find the paragraph element where you want to insert the forecast
+          const shippingForecastPlaceholder = document.getElementById('shipping-forecast-placeholder');
+          // Set the inner text content of the paragraph to the fetched forecast text
+          shippingForecastPlaceholder.innerText = text;
         })
         .catch(error => console.error('Error fetching shipping forecast:', error));
     </script>
 </body>
 </html>
+
