@@ -63,6 +63,32 @@ h1, p {
     margin-top: 20px; /* Add some spacing on the top */
     margin-bottom: 20px; /* Add some spacing on the bottom */
 }
+/* Ticker Scroller Styles for Shipping Forecast */
+#shipping-forecast-container {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%; /* Adjust based on layout */
+    height: auto;
+}
+
+#shipping-forecast-placeholder {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll-left 50s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
 
 /* Optional: Comment out or remove if you're using OSRS Font Parser for effects */
