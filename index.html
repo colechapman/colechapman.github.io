@@ -20,26 +20,20 @@
         <div class="main-content">
             <h1>cole chapman</h1>
             <p>This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
-            <!-- forecast_placeholder -->
+            <textarea id="shipping-forecast" rows="30" cols="50"></textarea>
         </div>
     </div>
     <script>
-  // Fetch the static shipping_forecast.txt file and insert its content into the page
-  fetch('data/shipping_forecast.txt')
-    .then(response => response.text())
-    .then(text => {
-      // Find the element where you want to insert the forecast
-      const mainContentDiv = document.querySelector('.main-content');
-      // Create a new element to hold the forecast
-      const forecastDiv = document.createElement('div');
-      forecastDiv.id = 'shipping-forecast';
-      // Insert the forecast text into the new div
-      forecastDiv.innerText = text;
-      // Append the forecast div to the main content div on the page
-      mainContentDiv.appendChild(forecastDiv);
-    })
-    .catch(error => console.error('Error fetching shipping forecast:', error));
-</script>
-
+      // Fetch the static shipping_forecast.txt file and insert its content into the page
+      fetch('data/shipping_forecast.txt')
+        .then(response => response.text())
+        .then(text => {
+          // Find the textarea element where you want to insert the forecast
+          const shippingForecastTextarea = document.getElementById('shipping-forecast');
+          // Set the text content of the textarea to the forecast text
+          shippingForecastTextarea.value = text;
+        })
+        .catch(error => console.error('Error fetching shipping forecast:', error));
+    </script>
 </body>
 </html>
