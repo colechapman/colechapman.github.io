@@ -1,0 +1,28 @@
+name: Update Shipping Forecast
+
+on:
+  schedule:
+    # Runs at 05:00 UTC daily
+    - cron: '0 5 * * *'
+
+jobs:
+  update-forecast:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+    - name: Install dependencies
+      run: gem install shipping-forecast
+    - name: Update Forecast
+      run: ruby update_forecast.rb
+    - name: Commit and Push if changed
+      run: |
+        git config --global user.email "cole.chapman15@gmail.com"
+        git config --global user.name "Cole Chapman"
+        git add forecast.html
+        git commit -m "Update Shipping Forecast" || exit 0
+        git push
