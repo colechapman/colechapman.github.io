@@ -4,7 +4,7 @@ require 'shipping_forecast'
 all_forecasts = ShippingForecast.all
 
 # Start building the HTML content for the Shipping Forecast section
-html_content = "<div id='shipping-forecast'>\n<h2>Latest Shipping Forecast</h2>\n<ul>\n"
+html_content = "<div class='forecast-content'>\n<h2>Latest Shipping Forecast</h2>\n<ul>\n"
 all_forecasts.each do |location, forecast|
   html_content += "<li><strong>#{location}</strong>: #{forecast[:wind]}, #{forecast[:seas]}, #{forecast[:weather]}, #{forecast[:visibility]}</li>\n"
 end
