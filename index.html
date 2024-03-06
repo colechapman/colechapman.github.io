@@ -5,6 +5,8 @@
     <title>cole chapman</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Corrected Include for the OSRS Font CSS -->
+    <link rel="stylesheet" href="OSRS-Font-Parser-master/src/font/os-font.css" />
 </head>
 <body>
     <div class="container">
@@ -18,31 +20,18 @@
             </ul>
         </nav>
         <div class="main-content">
-            <h1 class="animated-text">
-              <span class="char char1">w</span>
-              <span class="char char2">e</span>
-              <span class="char char3">l</span>
-              <span class="char char4">c</span>
-              <span class="char char5">o</span>
-              <span class="char char6">m</span>
-              <span class="char char7">e</span>
-              <span class="char char8"> </span> <!-- Space -->
-              <span class="char char9">t</span>
-              <span class="char char10">o</span>
-              <span class="char char11"> </span> <!-- Space -->
-              <span class="char char12">m</span>
-              <span class="char char13">y</span>
-              <span class="char char14"> </span> <!-- Space -->
-              <span class="char char15">p</span>
-              <span class="char char16">a</span>
-              <span class="char char17">g</span>
-              <span class="char char18">e</span>
-              <span class="char char19">!</span>
-            </h1>
+            <!-- Update your header to use the OSRS font effect -->
+            <h1 id="osrs-header">wave2:glow2:welcome to my page!</h1>
             <p id="shipping-forecast-placeholder">This is where you can introduce yourself, your interests, or whatever you'd like your visitors to know about.</p>
         </div>
     </div>
+    <!-- Corrected Include for the OSRS Font JS and Initialize -->
+    <script src="OSRS-Font-Parser-master/src/font/os-font.js"></script>
     <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        OsFont.compile(document.getElementById("osrs-header"));
+      });
+
       // Fetch the static shipping_forecast.txt file and insert its content into the page
       fetch('data/shipping_forecast.txt')
         .then(response => response.text())
