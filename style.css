@@ -13,7 +13,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: wave 0.03s infinite linear alternate; /* Decreased animation duration to 0.5s */
+    animation: wave 0.5s infinite linear alternate; /* Decreased animation duration to 0.5s */
 }
 
 @keyframes wave {
@@ -22,7 +22,7 @@
     100% { transform: translateY(0); }
 }
 
-/* Rest of your CSS remains the same */
+/* Rest of your CSS */
 
 body {
     font-family: 'IBM Plex Mono', monospace; /* Consider changing globally if desired */
@@ -49,3 +49,26 @@ nav {
     text-decoration: none;
 }
 
+/* Main Content Styles */
+.main-content {
+    margin: 50px 150px; /* Adjusted margin for centering */
+    padding: 20px;
+    border: 2px solid black; /* Black border */
+    border-radius: 10px; /* Smoothed corners */
+}
+
+h1, p {
+    color: #333;
+}
+
+/* Center the name */
+.main-content h1 {
+    text-align: center;
+}
+
+/* Additional styles for the shipping forecast textarea */
+#shipping-forecast {
+    padding: 1em;
+    border: 1px solid #ddd;
+    margin-top: 2em;
+}
