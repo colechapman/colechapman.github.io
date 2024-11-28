@@ -1,186 +1,186 @@
 Viking:
-  Wind: Northerly or northwesterly 3 to 5.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Showers at first.
+  Wind: Northerly 4 to 6, becoming variable 4, then southerly 5 to 7.
+  Sea State: Slight or moderate, occasionally rough later.
+  Weather: Showers.
   Visibility: Good.
 
 North Utsire:
-  Wind: Northerly or northwesterly 3 to 5.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Showers at first.
+  Wind: Northerly 4 to 6, becoming variable 4, then southerly 5 to 7.
+  Sea State: Slight or moderate.
+  Weather: Showers.
   Visibility: Good.
 
 South Utsire:
-  Wind: Northerly or northwesterly 3 to 5.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Showers at first.
+  Wind: Northerly 4 to 6, becoming variable 4, then southerly 5 to 7.
+  Sea State: Slight or moderate.
+  Weather: Showers.
   Visibility: Good.
 
 Forties:
-  Wind: North or northeast 3 to 5.
-  Sea State: Moderate or rough, becoming mainly moderate.
+  Wind: Northerly 4 to 6, becoming variable 4, then southerly 5 to 7, perhaps gale 8 later.
+  Sea State: Slight or moderate, occasionally rough later.
   Weather: Showers.
   Visibility: Good.
 
 Cromarty:
-  Wind: North or northeast, backing northwest later, 3 or 4.
+  Wind: Northwest 3 or 4, becoming variable 3, then south 5 to 7, occasionally gale 8 later.
   Sea State: Slight or moderate.
   Weather: Showers.
   Visibility: Good.
 
 Forth:
-  Wind: North or northeast, backing northwest later, 3 or 4.
+  Wind: Northwest 3 or 4, becoming variable 3, then south 5 to 7.
   Sea State: Slight or moderate.
   Weather: Showers.
   Visibility: Good.
 
 Tyne:
-  Wind: Variable 3 or 4, becoming north  4 to 6.
-  Sea State: Moderate, occasionally rough.
+  Wind: Northwest 3 or 4, becoming variable 3, then south 5 to 7.
+  Sea State: Slight or moderate.
   Weather: Showers.
   Visibility: Good.
 
 Dogger:
-  Wind: Variable 3 or 4, becoming north  4 to 6.
-  Sea State: Moderate, occasionally rough.
+  Wind: Northwest 3 or 4, becoming variable 3, then south 5 to 7.
+  Sea State: Slight or moderate.
   Weather: Showers.
   Visibility: Good.
 
 Fisher:
-  Wind: Northwest veering northeast later, 4 to 6.
-  Sea State: Slight or moderate, occasionally rough at first.
-  Weather: Occasional rain.
-  Visibility: Moderate or good.
+  Wind: North or northeast 4 to 6, backing southwest 3 or 4 later.
+  Sea State: Moderate, becoming mainly slight later.
+  Weather: Showers.
+  Visibility: Good.
 
 German Bight:
-  Wind: West or southwest 3 to 5, becoming cyclonic 7 to severe gale 9, then north 4 to 6 later.
-  Sea State: Moderate or rough.
-  Weather: Rain, perhaps thundery.
-  Visibility: Good, occasionally poor.
+  Wind: North, gale 8 to storm 10, decreasing 5 to 7, becoming variable 3 or 4 later.
+  Sea State: Moderate or rough, occasionally very rough at first in east, becoming slight or moderate later.
+  Weather: Thundery rain at first.
+  Visibility: Good, occasionally poor at first.
 
 Humber:
-  Wind: Cyclonic 4 to 6, increasing 7 or gale 8 for a time, becoming northwest 4 to 6 later.
-  Sea State: Moderate or rough, occasionally very rough.
-  Weather: Rain at first, perhaps thundery.
-  Visibility: Good, occasionally poor.
+  Wind: Northwest 4 to 6 then becoming variable 4, then south or southeast 4 or 5 later.
+  Sea State: Slight or moderate, but moderate or rough at first.
+  Weather: Fair.
+  Visibility: Good.
 
 Thames:
-  Wind: Cyclonic 4 to 6, increasing 7 or gale 8 for a time, becoming northwest 4 to 6 later.
-  Sea State: Moderate or rough.
-  Weather: Rain at first, perhaps thundery.
-  Visibility: Good, occasionally poor.
+  Wind: Northwest 4 to 6 then becoming variable 4, then south or southeast 4 or 5 later.
+  Sea State: Slight or moderate, but moderate or rough at first.
+  Weather: Fair.
+  Visibility: Good.
 
 Dover:
-  Wind: Southwest 5 to 7, occasionally gale 8 at first, veering north or northeast 3 or 4.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Rain at first.
-  Visibility: Moderate or good.
+  Wind: Northwest 4 to 6 then becoming variable 4, then south or southeast 4 or 5 later.
+  Sea State: Slight or moderate.
+  Weather: Fair.
+  Visibility: Good.
 
 Wight:
-  Wind: Southwest 5 to 7, occasionally gale 8 at first, veering north or northeast 3 or 4.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Rain at first.
+  Wind: East or northeast 3 or 4, veering southeast 4 to 6.
+  Sea State: Slight or moderate.
+  Weather: Fair.
   Visibility: Moderate or good.
 
 Portland:
-  Wind: Southwest 5 to 7, veering north or northeast 3 or 4.
-  Sea State: Moderate or rough, becoming slight or moderate.
-  Weather: Rain at first.
+  Wind: East or northeast 3 or 4, veering southeast 4 to 6.
+  Sea State: Slight or moderate.
+  Weather: Fair.
   Visibility: Moderate or good.
 
 Plymouth:
-  Wind: Cyclonic, becoming southeast later, 4 to 6.
-  Sea State: Moderate, but mainly rough at first.
+  Wind: East or northeast 3 or 4, veering southeast 4 to 6.
+  Sea State: Slight or moderate, becoming moderate or rough later.
   Weather: Rain later.
   Visibility: Moderate or good.
 
 Biscay:
-  Wind: Southwest 4 to 6, becoming cyclonic 3 to 5.
+  Wind: Cyclonic, becoming southeast later, 4 to 6.
   Sea State: Moderate or rough.
   Weather: Occasional rain.
-  Visibility: Good, occasionally poor.
+  Visibility: Moderate or good.
 
 Trafalgar:
-  Wind: Cyclonic 3 to 5, becoming southeasterly 4 to 6 later.
+  Wind: Southeast, veering southwest later, 4 to 6.
   Sea State: Moderate or rough.
-  Weather: Fair.
-  Visibility: Good.
+  Weather: Occasional rain later.
+  Visibility: Good, occasionally moderate later.
 
 FitzRoy:
-  Wind: Cyclonic, becoming south, 5 to 7, occasionally gale 8 later.
-  Sea State: Rough, occasionally very rough later in west.
-  Weather: Thundery rain or showers.
+  Wind: Southerly or southeasterly, 5 to 7, occasionally gale 8 in west.
+  Sea State: Rough or very rough.
+  Weather: Thundery rain and showers.
   Visibility: Good, occasionally poor.
 
 Sole:
-  Wind: Cyclonic, becoming south, 5 to 7.
-  Sea State: Rough, occasionally very rough later in west.
-  Weather: Thundery rain or showers.
+  Wind: Southerly or southeasterly, 5 to 7, occasionally gale 8 in west.
+  Sea State: Rough or very rough.
+  Weather: Thundery rain and showers.
   Visibility: Good, occasionally poor.
 
 Lundy:
-  Wind: North or northeast, veering southeast, 3 or 4, increasing 4 to 6.
-  Sea State: Slight or moderate.
-  Weather: Showers.
+  Wind: Southeasterly 5 to 7, occasionally gale 8.
+  Sea State: Moderate or rough.
+  Weather: Occasional rain.
   Visibility: Good, occasionally moderate.
 
 Fastnet:
-  Wind: North or northeast, veering southeast, 3 or 4, increasing 4 to 6, occasionally 7 later.
-  Sea State: Slight or moderate, becoming moderate or rough later.
-  Weather: Showers.
+  Wind: Southeasterly 5 to 7, occasionally gale 8.
+  Sea State: Moderate or rough, occasionally very rough later.
+  Weather: Occasional rain.
   Visibility: Good, occasionally moderate.
 
 Irish Sea:
-  Wind: North or northeast, veering southeast, 3 or 4, increasing 4 to 6.
-  Sea State: Smooth or slight.
-  Weather: Showers.
+  Wind: Southeasterly 5 to 7, occasionally gale 8, but variable 3 or 4 at first.
+  Sea State: Moderate or rough, but slight or moderate at first.
+  Weather: Occasional rain.
   Visibility: Good, occasionally moderate.
 
 Shannon:
-  Wind: East or northeast 3 or 4, veering southeast 4 to 6, increasing 7 or gale 8 later.
-  Sea State: Moderate or rough, becoming rough or very rough later.
-  Weather: Rain later.
-  Visibility: Good, occasionally poor later.
+  Wind: Southeast, veering south later, 5 to 7, increasing gale 8 or severe gale 9 for a time.
+  Sea State: Rough or very rough.
+  Weather: Rain developing.
+  Visibility: Good, occasionally poor.
 
 Rockall:
-  Wind: East or northeast 3 or 4, veering southeast 4 to 6, increasing 7 or gale 8 later.
-  Sea State: Moderate or rough, becoming rough or very rough later.
-  Weather: Rain later.
-  Visibility: Good, occasionally poor later.
+  Wind: Southeast, veering south later, 5 to 7, increasing gale 8 or severe gale 9 for a time.
+  Sea State: Rough or very rough.
+  Weather: Rain developing.
+  Visibility: Good, occasionally poor.
 
 Malin:
-  Wind: Northeast, veering southeast later, 3 to 5, occasionally 6 later.
-  Sea State: Slight or moderate.
-  Weather: Showers.
-  Visibility: Good.
+  Wind: Southeast, veering south later, 5 to 7, increasing gale 8 or severe gale 9 for a time.
+  Sea State: Rough or very rough, but slight or moderate at first.
+  Weather: Rain developing.
+  Visibility: Good, occasionally poor.
 
 Hebrides:
-  Wind: Cyclonic 3 to 5.
-  Sea State: Moderate.
-  Weather: Showers.
-  Visibility: Good.
+  Wind: Southeast, veering south later, 5 to 7, increasing gale 8 or severe gale 9 for a time.
+  Sea State: Rough or very rough, but slight or moderate at first.
+  Weather: Rain developing.
+  Visibility: Good, occasionally poor.
 
 Bailey:
-  Wind: Cyclonic 3 to 5.
-  Sea State: Moderate, occasionally rough in north.
-  Weather: Showers.
-  Visibility: Good.
+  Wind: Cyclonic 4 to 6, increasing 7 or gale 8 later, perhaps severe gale 9 later in north.
+  Sea State: Moderate or rough, becoming rough or very rough, occasionally high later.
+  Weather: Rain later.
+  Visibility: Good, becoming poor later.
 
 Fair Isle:
-  Wind: Cyclonic 3 or 4.
-  Sea State: Slight or moderate.
-  Weather: Showers.
+  Wind: Cyclonic 4 to 6, becoming south 5 to 7, occasionally gale 8 later.
+  Sea State: Moderate or rough, but slight or moderate at first.
+  Weather: Showers, rain later.
   Visibility: Good.
 
 Faeroes:
-  Wind: Westerly or southwesterly 4 to 6.
+  Wind: Cyclonic 4 to 6, becoming south 5 to 7.
   Sea State: Moderate or rough.
-  Weather: Showers.
+  Weather: Showers, rain later.
   Visibility: Good.
 
 Southeast Iceland:
-  Wind: Westerly or southwesterly 4 to 6, increasing 7 or gale 8 later.
-  Sea State: Moderate or rough.
-  Weather: Showers.
-  Visibility: Good.
+  Wind: Southwesterly, becoming cyclonic later, 6 to gale 8, perhaps severe gale 9 later.
+  Sea State: Rough, becoming rough or very rough later.
+  Weather: Rain or snow later.
+  Visibility: Good, occasionally very poor later.
 
