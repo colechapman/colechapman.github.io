@@ -1,95 +1,269 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Проекты - Cole Chapman</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 20px;
-        }
-        .side-buttons {
-            list-style-type: none;
-            padding: 0;
-        }
-        .side-buttons li a {
-            display: block;
-            text-decoration: none;
-            color: black;
-            padding: 10px;
-            transition: color 0.3s ease;
-        }
-        .main-content {
-            margin: 50px 150px;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: #FFF;
-        }
-        h1, p {
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-        }
-        /* Tab styles */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .tab {
-            padding: 10px 20px;
-            margin: 0 5px;
-            text-align: center;
-            border: 1px solid black;
-            border-radius: 5px;
-            background-color: #f0f0f0;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .tab:hover {
-            background-color: #ddd;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <nav>
-            <ul class="side-buttons">
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about me</a></li>
-                <li><a href="links.html">links</a></li>
-                <li><a href="projects.html">projects</a></li>
-                <li><a href="cv.html">CV</a></li>
-            </ul>
-        </nav>
-        <div class="main-content">
-            <h1>Проекты</h1>
-            <p>This page showcases my projects. Click on the tabs below to download the datasets:</p>
-            <div class="tabs">
-                <a href="./energy_etfs_data.csv" class="tab" download>Energy ETFs Data</a>
-                <a href="./high-volatility_stocks_data.csv" class="tab" download>High Volatility Stocks</a>
-                <a href="./s&p_index_funds_data.csv" class="tab" download>S&P Index Funds</a>
-            </div>
-            <p>Click on the tabs below to access the Python code used in the projects:</p>
-            <div class="tabs">
-                <a href="./FAST_HALS.py" class="tab" download>FAST_HALS.py</a>
-                <a href="./HALS.py" class="tab" download>HALS.py</a>
-                <a href="./multiplicative_update.py" class="tab" download>multiplicative_update.py</a>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+/* ====== Typography ====== */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap');
+
+:root{
+  --bg: #ffffff;
+  --ink: #0f0f0f;
+  --muted: #4f4f4f;
+  --line: #cfcfcf;
+  --line2:#e7e7e7;
+
+  /* that classic academic blue */
+  --blue: #1b4fb5;
+  --blue-dark: #103a8b;
+
+  --panel: #f5f5f5;
+  --shadow: rgba(0,0,0,.08);
+
+  --maxw: 1240px;
+  --sidebar: 235px;
+  --right: 365px;
+  --gap: 18px;
+
+  --serif: "PT Serif", Georgia, "Times New Roman", Times, serif;
+  --sans: "PT Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.25;
+}
+
+/* Links like the Steklov-ish ones */
+a{ color: var(--blue); text-decoration:none; }
+a:hover{ text-decoration: underline; }
+
+/* ====== Header (classic gradient + swoosh) ====== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(#fbfbfb, #eeeeee);
+}
+
+/* Bevel effect */
+.site-header::after{
+  content:"";
+  display:block;
+  height: 10px;
+  background: linear-gradient(var(--shadow), transparent);
+}
+
+.header-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 16px 8px 16px;
+  position: relative;
+}
+
+/* The swoosh layer: original but similar vibe */
+.header-swoosh{
+  position:absolute;
+  inset: 0;
+  pointer-events:none;
+  opacity: .65;
+}
+
+.brand-row{
+  display:flex;
+  gap: 14px;
+  align-items:flex-end;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand{
+  padding-right: 12px;
+}
+
+.brand-title{
+  font-size: 28px;
+  letter-spacing: .2px;
+  font-weight: 700;
+}
+
+.brand-subtitle{
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* top right icons/links */
+.header-links{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.header-links a{
+  color: var(--blue-dark);
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.header-links a:hover{
+  border-color: var(--line2);
+  background: #fff;
+  text-decoration:none;
+}
+
+.header-links .pipe{
+  color:#7a7a7a;
+  padding: 0 2px;
+}
+
+/* ====== Page layout ====== */
+.layout{
+  max-width: var(--maxw);
+  margin: 16px auto;
+  padding: 0 16px;
+  display:grid;
+  grid-template-columns: var(--sidebar) 1fr var(--right);
+  gap: var(--gap);
+}
+
+/* Sidebar */
+.sidebar .box{
+  border: 1px solid var(--line2);
+  background: #fff;
+  padding: 10px 10px;
+  margin-bottom: 14px;
+}
+
+.box-title{
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.nav{
+  list-style:none;
+  padding:0;
+  margin:0;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.nav li{
+  padding: 3px 0;
+  border-bottom: 1px dotted #e6e6e6;
+}
+.nav li:last-child{ border-bottom: none; }
+
+.nav a{
+  display:block;
+  padding: 2px 4px;
+}
+.nav a:hover{
+  background: #f4f7ff;
+  text-decoration:none;
+}
+
+/* Content */
+.content .section{
+  border: 1px solid var(--line2);
+  background: #fff;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+.section h2{
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+/* Seminar-style items */
+.item{
+  display:grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #efefef;
+}
+.item:first-of-type{ border-top:none; }
+.bullet{
+  color: #b40000; /* that tiny red triangle vibe */
+  font-weight: 700;
+  transform: translateY(1px);
+}
+.item-title{ font-weight: 700; }
+.item-meta{
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.item-links{
+  font-family: var(--sans);
+  font-size: 12.5px;
+  margin-top: 6px;
+  display:flex;
+  gap: 10px;
+}
+
+/* Right column */
+.rightcol .box{
+  border: 1px solid var(--line2);
+  background:#fff;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  border: 1px solid #e2e2e2;
+}
+.caption{
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.news{
+  list-style:none;
+  padding:0;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.news li{
+  padding: 8px 0;
+  border-top: 1px solid #efefef;
+}
+.news li:first-child{ border-top:none; }
+
+.small{ font-family: var(--sans); font-size: 13px; color: var(--muted); }
+
+/* Footer */
+footer{
+  max-width: var(--maxw);
+  margin: 18px auto 30px;
+  padding: 0 16px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 1050px){
+  .layout{ grid-template-columns: 240px 1fr; }
+  .rightcol{ display:none; }
+}
+@media (max-width: 720px){
+  .layout{ grid-template-columns: 1fr; }
+  .sidebar{ order: 2; }
+}
+
