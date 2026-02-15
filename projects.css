@@ -199,6 +199,26 @@ a:active { color: #EE0000; }
 
 .footerSpace { height: 40px; }
 
+/* ===== About page layout ===== */
+.aboutWrap{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.aboutPhoto img{
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #bdbdbd;
+  padding: 4px;
+  background: #fff;
+}
+
+.aboutText{
+  flex: 1;
+}
+
+
 /* ===== Responsive ===== */
 @media (max-width: 1020px) {
   #headerText, #wrap { width: 95%; }
