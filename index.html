@@ -1,83 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>cole chapman</title>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Include the OSRS Font CSS -->
-    <link rel="stylesheet" href="os-font.css" />
-</head>
-<body>
-    <div class="container">
-        <nav>
-            <ul class="side-buttons">
-                <li><a href="index.html">home</a></li>
-                <li><a href="#about">about me</a></li>
-                <li><a href="#links">links</a></li>
-                <li><a href="projects.html">projects</a></li>
-                <li><a href="#CV">CV</a></li>
-            </ul>
-        </nav>
-        <div class="main-content">
-            <p class="osrs-header">flash2:wave2:welcome to the homepage of cole chapman!</p>
-            <p>red:weather reports and forecasts for the seas around the British Isles:</p>
-            <div id="shipping-forecast-container">
-                <p id="shipping-forecast-placeholder">Loading shipping forecast...</p>
-            </div>
-        </div>
-    </div>
-    <!-- Fetch, insert content into the shipping forecast section, and adjust scrolling speed -->
-    <script>
-        fetch('data/shipping_forecast.txt')
-    .then(response => response.text())
-    .then(text => {
-        // Adding markers and replacing newlines with spaces
-        const formattedText = `Start -> ${text.replace(/\n+/g, ' ')} -> End`;
-        document.getElementById('shipping-forecast-placeholder').innerText = formattedText;
-    })
-    .catch(error => console.error('Error fetching shipping forecast:', error));
-    </script>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/shipping_forecast.txt')
-        .then(response => response.text())
-        .then(text => {
-            // Split the text into regions using two newlines as a delimiter
-            const regions = text.trim().split('\n\n');
-            let currentRegionIndex = 0;
-            
-            function displayRegion() {
-                // If currentRegionIndex exceeds the number of regions, start over
-                if (currentRegionIndex >= regions.length) {
-                    currentRegionIndex = 0;
-                }
-                
-                // Display the current region's forecast
-                const regionText = regions[currentRegionIndex].replace(/\n/g, '<br>'); // Replace newlines with <br> for HTML display
-                document.getElementById('shipping-forecast-placeholder').innerHTML = regionText;
-                
-                // Move to the next region for the next interval
-                currentRegionIndex++;
-            }
-            
-            // Display the first region immediately
-            displayRegion();
-            
-            // Then set up an interval to cycle through regions every 5 seconds (5000 milliseconds)
-            setInterval(displayRegion, 5000);
-        })
-        .catch(error => console.error('Error fetching shipping forecast:', error));
-});
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cole Chapman</title>
 
-    <!-- Include the OSRS Font JS and initialize the library -->
-    <script src="os-font.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            OsFont.compile();
+  <!-- Unified clean institute style -->
+  <link rel="stylesheet" href="site.css?v=1" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div id="top">
+    <div id="header">
+      <div id="headerText">
+        <div id="headerTitle">COLE CHAPMAN</div>
+        <div id="headerSubtitle">Arizona State University</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div id="wrap">
+    <!-- LEFT NAV -->
+    <div id="left">
+      <ul class="menu">
+        <li class="active"><a href="index.html">home</a></li>
+        <li><a href="about.html">about me</a></li>
+        <li><a href="links.html">links</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+
+      <div class="spacer"></div>
+
+      <div class="addressBox">
+        <div class="addressTitle">Address</div>
+        <div class="addressText">
+          Arizona State University<br/>
+          Tempe Campus<br/>
+          1151 S Forest Ave<br/>
+          Tempe, AZ 85281<br/>
+        </div>
+        <div class="addressLinks">
+          <a href="https://www.asu.edu/about/locations-maps" target="_blank" rel="noopener">View Map</a><br/>
+          <a href="https://www.asu.edu/about/locations-maps" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER CONTENT -->
+    <div id="center">
+      <div class="sectionTitle">Home</div>
+      <div class="sectionText">
+        Welcome. This site contains my CV, projects, and links.
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="blockTitle">Highlights</div>
+
+      <div class="entry">
+        <div class="bullet" aria-hidden="true"></div>
+        <div class="entryBody">
+          <div class="entryTitle"><a href="projects.html">Projects</a></div>
+          <div class="entryMeta">Algorithms, datasets, and writeups (NMF, ETFs, S&amp;P funds, volatility).</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="bullet" aria-hidden="true"></div>
+        <div class="entryBody">
+          <div class="entryTitle"><a href="cv.html">CV</a></div>
+          <div class="entryMeta">Education, experience, and skills.</div>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="bullet" aria-hidden="true"></div>
+        <div class="entryBody">
+          <div class="entryTitle"><a href="links.html">Links</a></div>
+          <div class="entryMeta">GitHub, LinkedIn, and other profiles.</div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="blockTitle">Shipping Forecast (personal)</div>
+      <div class="sectionText">
+        I like the Shipping Forecast — here’s a rotating excerpt.
+      </div>
+
+      <div class="forecastBox">
+        <div id="shipping-forecast-placeholder">Loading shipping forecast...</div>
+      </div>
+
+      <div class="footerSpace"></div>
+    </div>
+
+    <!-- RIGHT (empty whitespace like institute sites) -->
+    <div id="right"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('data/shipping_forecast.txt')
+        .then(r => r.text())
+        .then(text => {
+          const regions = text.trim().split('\n\n');
+          let i = 0;
+
+          function show() {
+            if (i >= regions.length) i = 0;
+            const regionHtml = regions[i].replace(/\n/g, '<br>');
+            document.getElementById('shipping-forecast-placeholder').innerHTML = regionHtml;
+            i++;
+          }
+
+          show();
+          setInterval(show, 5000);
+        })
+        .catch(err => {
+          document.getElementById('shipping-forecast-placeholder').textContent =
+            'Unable to load shipping forecast.';
+          console.error(err);
         });
-    </script>
+    });
+  </script>
 </body>
 </html>
-
