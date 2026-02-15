@@ -159,6 +159,7 @@ a:active { color: #EE0000; }
 }
 
 /* Entry list (like seminar items) */
+/* Entry list (like seminar items) */
 .entry {
   display: table;
   width: 100%;
@@ -169,10 +170,20 @@ a:active { color: #EE0000; }
 .bullet {
   display: table-cell;
   width: 26px;
-  color: #b00000;
-  font-weight: bold;
   padding-left: 4px;
+  vertical-align: top;
 }
+
+/* Use the gif icon instead of "▶" */
+.bullet::before{
+  content:"";
+  display:inline-block;
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+  background: url("assets/close4.gif") no-repeat left top;
+}
+
 
 .entryBody {
   display: table-cell;
