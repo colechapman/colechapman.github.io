@@ -1,4 +1,6 @@
-/* ====== Classic look: Times-like serif ====== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+
+/* ===== Base ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -8,22 +10,21 @@ html, body {
   font-size: 16px;
 }
 
-/* Classic link colors (old web look) */
+/* Classic link colors */
 a:link { color: #0000EE; text-decoration: none; }
 a:visited { color: #551A8B; text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:active { color: #EE0000; }
 
-/* ====== Header bar ====== */
+/* ===== Header ===== */
 #top {
   background: #f2f2f2;
 }
 
 #header {
-  /* soft gray gradient + subtle “band” feel */
-  background: linear-gradient(#efefef, #f8f8f8);
+  background: #f7f7f7;
   border-bottom: 1px solid #bdbdbd;
-  padding: 14px 0 10px 0;
+  padding: 16px 0 12px 0;
 }
 
 #headerText {
@@ -33,20 +34,22 @@ a:active { color: #EE0000; }
 }
 
 #headerTitle {
-  font-size: 28px;
-  font-weight: normal;
-  letter-spacing: 0.5px;
-  /* “institute header” vibe */
-  font-variant: small-caps;
+  font-family: "Cinzel", "Trajan Pro", "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 #headerSubtitle {
+  font-family: "Cinzel", "Trajan Pro", "Times New Roman", serif;
   font-size: 18px;
-  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.8px;
   margin-top: 2px;
 }
 
-/* ====== Page wrapper: left menu + big white center ====== */
+/* ===== Layout ===== */
 #wrap {
   width: 980px;
   margin: 0 auto;
@@ -67,14 +70,14 @@ a:active { color: #EE0000; }
 #center {
   width: 730px;
   padding: 10px 10px 0 10px;
-  border-left: 1px solid #d0d0d0; /* the faint vertical rule */
+  border-left: 1px solid #d0d0d0;
 }
 
 #right {
   width: 40px;
 }
 
-/* ====== Left menu (with the GIF separators) ====== */
+/* ===== Left Menu ===== */
 .menu {
   list-style: none;
   margin: 0;
@@ -85,10 +88,9 @@ a:active { color: #EE0000; }
 .menu li {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
-/* the blue “line” under each item */
+/* separator line using your gif */
 .menu li::after {
   content: "";
   display: block;
@@ -97,7 +99,7 @@ a:active { color: #EE0000; }
   background: url("assets/line.gif") repeat-x left center;
 }
 
-/* left bullet circle vibe */
+/* small circle like the original site */
 .menu li a::before {
   content: "○ ";
   color: #000;
@@ -105,15 +107,14 @@ a:active { color: #EE0000; }
 
 .menu li a {
   display: block;
-  padding: 2px 0 2px 0;
+  padding: 2px 0;
 }
 
-/* highlight current page similarly */
 .menu li.active a {
   font-weight: bold;
 }
 
-/* ====== Address box ====== */
+/* ===== Address box ===== */
 .spacer { height: 18px; }
 
 .addressBox {
@@ -128,11 +129,7 @@ a:active { color: #EE0000; }
 
 .addressText { margin-bottom: 8px; }
 
-.addressLinks {
-  margin-top: 4px;
-}
-
-/* ====== Center content typography ====== */
+/* ===== Center Content ===== */
 .sectionTitle {
   font-style: italic;
   font-weight: bold;
@@ -158,8 +155,7 @@ a:active { color: #EE0000; }
   margin: 14px 0;
 }
 
-/* Entry list (like seminar items) */
-/* Entry list (like seminar items) */
+/* ===== Entries ===== */
 .entry {
   display: table;
   width: 100%;
@@ -172,18 +168,20 @@ a:active { color: #EE0000; }
   width: 26px;
   padding-left: 4px;
   vertical-align: top;
+  font-size: 0;
+  line-height: 0;
 }
 
-/* Use the gif icon instead of "▶" */
-.bullet::before{
-  content:"";
-  display:inline-block;
+/* Use close4.gif as bullet */
+.bullet::before {
+  content: "";
+  display: inline-block;
   width: 12px;
   height: 12px;
   margin-top: 2px;
   background: url("assets/close4.gif") no-repeat left top;
+  background-size: 12px 12px;
 }
-
 
 .entryBody {
   display: table-cell;
@@ -201,10 +199,8 @@ a:active { color: #EE0000; }
 
 .footerSpace { height: 40px; }
 
-/* ====== Make it tolerable on mobile without ruining the vibe ====== */
+/* ===== Responsive ===== */
 @media (max-width: 1020px) {
   #headerText, #wrap { width: 95%; }
   #wrap { display: block; }
-  #left, #center, #right { display: block; width: auto; }
-  #center { border-left: none; }
-}
+  #left, #center, #rig
