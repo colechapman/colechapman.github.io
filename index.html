@@ -8,6 +8,44 @@
   <!-- Reuse the same stylesheet as Projects -->
   <link rel="stylesheet" href="projects.css?v=4" />
 </head>
+<script>
+  // Tempe approximate coords
+  const TEMPE = { lat: 33.4255, lon: -111.9400 };
+
+  async function loadWeather() {
+    const url =
+      `https://api.open-meteo.com/v1/forecast` +
+      `?latitude=${TEMPE.lat}&longitude=${TEMPE.lon}` +
+      `&current=temperature_2m,apparent_temperature,wind_speed_10m` +
+      `&temperature_unit=fahrenheit&wind_speed_unit=mph`;
+
+    try {
+      const r = await fetch(url);
+      const data = await r.json();
+      const c = data.current;
+
+      const updated = new Date(c.time).toLocaleString(undefined, {
+        year: "numeric", month: "short", day: "2-digit",
+        hour: "2-digit", minute: "2-digit"
+      });
+
+      document.getElementById("wxBox").innerHTML =
+        `<b>Tempe, AZ</b><br>` +
+        `Temp: ${Math.round(c.temperature_2m)}°F<br>` +
+        `Feels: ${Math.round(c.apparent_temperature)}°F<br>` +
+        `Wind: ${Math.round(c.wind_speed_10m)} mph<br>` +
+        `<span class="miniNote">Updated: ${updated}</span>`;
+    } catch (e) {
+      document.getElementById("wxBox").textContent =
+        "Weather unavailable.";
+      console.error(e);
+    }
+  }
+
+  loadWeather();
+  // refresh every 10 minutes
+  setInterval(loadWeather, 10 * 60 * 1000);
+</script>
 
 <body>
   <!-- HEADER -->
@@ -62,6 +100,11 @@
         This is a professional portfolio focused on applied mathematics, numerical methods,
         and data analysis. Project pages include datasets, source code, and short technical descriptions.
       </div>
+
+      <div class="blockTitle">Weather (Tempe, AZ)</div>
+<div class="miniBox" id="wxBox">
+  Loading weather...
+</div>
 
       <div class="footerSpace"></div>
     </div>
