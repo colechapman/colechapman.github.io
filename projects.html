@@ -1,269 +1,137 @@
-/* ====== Typography ====== */
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap');
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Seminars & Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-:root{
-  --bg: #ffffff;
-  --ink: #0f0f0f;
-  --muted: #4f4f4f;
-  --line: #cfcfcf;
-  --line2:#e7e7e7;
+<body>
+  <!-- Top Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-title">Your Personal Institute</div>
+        <div class="brand-subtitle">Seminars • Notes • Projects</div>
+      </div>
 
-  /* that classic academic blue */
-  --blue: #1b4fb5;
-  --blue-dark: #103a8b;
+      <nav class="top-links" aria-label="Top links">
+        <a href="#" class="icon-link" title="Home">⌂</a>
+        <a href="#" class="icon-link" title="YouTube">▶</a>
+        <a href="#" class="icon-link" title="Telegram">✈</a>
+        <a href="#" class="icon-link" title="VK">vk</a>
+        <a href="#" class="lang" data-lang="en">EN</a>
+        <a href="#" class="lang" data-lang="ru">RU</a>
+      </nav>
+    </div>
+    <div class="topbar-shadow"></div>
+  </header>
 
-  --panel: #f5f5f5;
-  --shadow: rgba(0,0,0,.08);
+  <!-- Page Layout -->
+  <main class="layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" aria-label="Site navigation">
+      <div class="sidebar-box">
+        <div class="sidebar-title">Navigation</div>
+        <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#seminars">Seminars</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#links">Links</a></li>
+        </ul>
+      </div>
 
-  --maxw: 1240px;
-  --sidebar: 235px;
-  --right: 365px;
-  --gap: 18px;
+      <div class="sidebar-box">
+        <div class="sidebar-title">Contacts</div>
+        <div class="small">
+          <div><strong>Email:</strong> you@example.com</div>
+          <div><strong>Location:</strong> Your City</div>
+          <div class="muted">Office hours by appointment</div>
+        </div>
+      </div>
+    </aside>
 
-  --serif: "PT Serif", Georgia, "Times New Roman", Times, serif;
-  --sans: "PT Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
+    <!-- Center Content -->
+    <section class="content" aria-label="Main content">
+      <div class="section" id="seminars">
+        <div class="section-header">
+          <h2>Colloquium / Seminar</h2>
+          <button class="btn" id="toggleCompact">Compact view</button>
+        </div>
 
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.25;
-}
+        <article class="item featured">
+          <div class="item-bullet">›</div>
+          <div class="item-body">
+            <div class="item-title">On something cool (your talk title)</div>
+            <div class="item-meta">
+              <span class="meta-person">Your Name</span>
+              <span class="meta-dot">•</span>
+              <time datetime="2026-02-18T15:00">February 18, 2026 15:00</time>
+              <span class="meta-dot">•</span>
+              <span class="meta-place">Room 101 + online</span>
+            </div>
+            <div class="item-links">
+              <a href="#" class="link">Abstract</a>
+              <a href="#" class="link">Slides</a>
+              <a href="#" class="link">Video</a>
+            </div>
+          </div>
+        </article>
 
-/* Links like the Steklov-ish ones */
-a{ color: var(--blue); text-decoration:none; }
-a:hover{ text-decoration: underline; }
+        <div class="subsection">
+          <h3>Upcoming seminars</h3>
+          <div id="seminarList" class="list"></div>
+          <div class="more">
+            <a href="#archive">More upcoming seminars</a>
+          </div>
+        </div>
+      </div>
 
-/* ====== Header (classic gradient + swoosh) ====== */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 1px solid var(--line);
-  background: linear-gradient(#fbfbfb, #eeeeee);
-}
+      <div class="section" id="notes">
+        <h2>Notes</h2>
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title">Numerical Analysis</div>
+            <div class="small muted">Stability • conditioning • floating point</div>
+            <a class="card-link" href="#">Open</a>
+          </div>
+          <div class="card">
+            <div class="card-title">Linear Algebra</div>
+            <div class="small muted">Spectral theory • inner products</div>
+            <a class="card-link" href="#">Open</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Bevel effect */
-.site-header::after{
-  content:"";
-  display:block;
-  height: 10px;
-  background: linear-gradient(var(--shadow), transparent);
-}
+    <!-- Right Column -->
+    <aside class="rightcol" aria-label="Highlights">
+      <div class="right-box">
+        <div class="photo">
+          <!-- Replace with your own image -->
+          <img src="https://picsum.photos/560/320" alt="Your photo" />
+          <div class="caption">Your Name — workshop / talk photo caption</div>
+        </div>
+      </div>
 
-.header-inner{
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 14px 16px 8px 16px;
-  position: relative;
-}
+      <div class="right-box">
+        <h3 class="right-title">News</h3>
+        <ul class="news" id="newsList"></ul>
+      </div>
+    </aside>
+  </main>
 
-/* The swoosh layer: original but similar vibe */
-.header-swoosh{
-  position:absolute;
-  inset: 0;
-  pointer-events:none;
-  opacity: .65;
-}
+  <footer class="footer">
+    <div class="muted small">
+      © <span id="year"></span> Your Name • Built with GitHub Pages
+    </div>
+  </footer>
 
-.brand-row{
-  display:flex;
-  gap: 14px;
-  align-items:flex-end;
-  justify-content: space-between;
-  position: relative;
-}
-
-.brand{
-  padding-right: 12px;
-}
-
-.brand-title{
-  font-size: 28px;
-  letter-spacing: .2px;
-  font-weight: 700;
-}
-
-.brand-subtitle{
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-/* top right icons/links */
-.header-links{
-  display:flex;
-  gap: 10px;
-  align-items:center;
-  flex-wrap: wrap;
-  font-family: var(--sans);
-  font-size: 13px;
-}
-
-.header-links a{
-  color: var(--blue-dark);
-  padding: 6px 8px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-}
-
-.header-links a:hover{
-  border-color: var(--line2);
-  background: #fff;
-  text-decoration:none;
-}
-
-.header-links .pipe{
-  color:#7a7a7a;
-  padding: 0 2px;
-}
-
-/* ====== Page layout ====== */
-.layout{
-  max-width: var(--maxw);
-  margin: 16px auto;
-  padding: 0 16px;
-  display:grid;
-  grid-template-columns: var(--sidebar) 1fr var(--right);
-  gap: var(--gap);
-}
-
-/* Sidebar */
-.sidebar .box{
-  border: 1px solid var(--line2);
-  background: #fff;
-  padding: 10px 10px;
-  margin-bottom: 14px;
-}
-
-.box-title{
-  font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 8px;
-}
-
-.nav{
-  list-style:none;
-  padding:0;
-  margin:0;
-  font-family: var(--sans);
-  font-size: 13px;
-}
-
-.nav li{
-  padding: 3px 0;
-  border-bottom: 1px dotted #e6e6e6;
-}
-.nav li:last-child{ border-bottom: none; }
-
-.nav a{
-  display:block;
-  padding: 2px 4px;
-}
-.nav a:hover{
-  background: #f4f7ff;
-  text-decoration:none;
-}
-
-/* Content */
-.content .section{
-  border: 1px solid var(--line2);
-  background: #fff;
-  padding: 12px 14px;
-  margin-bottom: 14px;
-}
-.section h2{
-  margin: 0 0 10px 0;
-  font-size: 18px;
-}
-
-/* Seminar-style items */
-.item{
-  display:grid;
-  grid-template-columns: 18px 1fr;
-  gap: 10px;
-  padding: 10px 0;
-  border-top: 1px solid #efefef;
-}
-.item:first-of-type{ border-top:none; }
-.bullet{
-  color: #b40000; /* that tiny red triangle vibe */
-  font-weight: 700;
-  transform: translateY(1px);
-}
-.item-title{ font-weight: 700; }
-.item-meta{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-.item-links{
-  font-family: var(--sans);
-  font-size: 12.5px;
-  margin-top: 6px;
-  display:flex;
-  gap: 10px;
-}
-
-/* Right column */
-.rightcol .box{
-  border: 1px solid var(--line2);
-  background:#fff;
-  padding: 10px;
-  margin-bottom: 14px;
-}
-
-.photo img{
-  width:100%;
-  height:auto;
-  display:block;
-  border: 1px solid #e2e2e2;
-}
-.caption{
-  font-family: var(--sans);
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 6px;
-}
-
-.news{
-  list-style:none;
-  padding:0;
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 13px;
-}
-.news li{
-  padding: 8px 0;
-  border-top: 1px solid #efefef;
-}
-.news li:first-child{ border-top:none; }
-
-.small{ font-family: var(--sans); font-size: 13px; color: var(--muted); }
-
-/* Footer */
-footer{
-  max-width: var(--maxw);
-  margin: 18px auto 30px;
-  padding: 0 16px;
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--muted);
-}
-
-/* Responsive */
-@media (max-width: 1050px){
-  .layout{ grid-template-columns: 240px 1fr; }
-  .rightcol{ display:none; }
-}
-@media (max-width: 720px){
-  .layout{ grid-template-columns: 1fr; }
-  .sidebar{ order: 2; }
-}
+  <script src="app.js"></script>
+</body>
+</html>
 
