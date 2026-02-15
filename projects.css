@@ -202,22 +202,22 @@ a:active { color: #EE0000; }
 /* ===== About page layout ===== */
 .aboutWrap{
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: flex-start;
 }
 
 .aboutPhoto img{
-  max-width: 200px;
+  width: 140px;        /* hard limit: keeps it small and tidy */
   height: auto;
   border: 1px solid #bdbdbd;
-  padding: 4px;
+  padding: 3px;
   background: #fff;
 }
-
 
 .aboutText{
   flex: 1;
 }
+
 
 
 /* ===== Responsive ===== */
