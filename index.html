@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cole Chapman</title>
 
-  <!-- Unified clean institute style -->
-  <link rel="stylesheet" href="site.css?v=1" />
+  <!-- Reuse the same stylesheet as Projects -->
+  <link rel="stylesheet" href="projects.css?v=4" />
 </head>
 
 <body>
@@ -53,79 +53,62 @@
     <div id="center">
       <div class="sectionTitle">Home</div>
       <div class="sectionText">
-        Welcome. This site contains my CV, projects, and links.
+        Welcome. This site contains my projects, CV, and links to my work.
       </div>
 
       <div class="hr"></div>
 
-      <div class="blockTitle">Highlights</div>
+      <div class="blockTitle">Overview</div>
 
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
-          <div class="entryTitle"><a href="projects.html">Projects</a></div>
-          <div class="entryMeta">Algorithms, datasets, and writeups (NMF, ETFs, S&amp;P funds, volatility).</div>
+          <div class="entryTitle">
+            <a href="projects.html">Projects</a>
+          </div>
+          <div class="entryMeta">
+            Data analysis and numerical algorithms (NMF, ETFs, S&amp;P funds, volatility modeling).
+          </div>
         </div>
       </div>
 
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
-          <div class="entryTitle"><a href="cv.html">CV</a></div>
-          <div class="entryMeta">Education, experience, and skills.</div>
+          <div class="entryTitle">
+            <a href="cv.html">Curriculum Vitae</a>
+          </div>
+          <div class="entryMeta">
+            Education, experience, and technical skills.
+          </div>
         </div>
       </div>
 
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
-          <div class="entryTitle"><a href="links.html">Links</a></div>
-          <div class="entryMeta">GitHub, LinkedIn, and other profiles.</div>
+          <div class="entryTitle">
+            <a href="links.html">Links</a>
+          </div>
+          <div class="entryMeta">
+            GitHub, LinkedIn, and other profiles.
+          </div>
         </div>
       </div>
 
       <div class="hr"></div>
 
-      <div class="blockTitle">Shipping Forecast (personal)</div>
+      <div class="blockTitle">About this site</div>
       <div class="sectionText">
-        I like the Shipping Forecast — here’s a rotating excerpt.
-      </div>
-
-      <div class="forecastBox">
-        <div id="shipping-forecast-placeholder">Loading shipping forecast...</div>
+        This is a professional portfolio focused on applied mathematics, numerical methods,
+        and data analysis. Project pages include datasets, source code, and short technical descriptions.
       </div>
 
       <div class="footerSpace"></div>
     </div>
 
-    <!-- RIGHT (empty whitespace like institute sites) -->
+    <!-- RIGHT COLUMN (empty, for spacing like institute layouts) -->
     <div id="right"></div>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('data/shipping_forecast.txt')
-        .then(r => r.text())
-        .then(text => {
-          const regions = text.trim().split('\n\n');
-          let i = 0;
-
-          function show() {
-            if (i >= regions.length) i = 0;
-            const regionHtml = regions[i].replace(/\n/g, '<br>');
-            document.getElementById('shipping-forecast-placeholder').innerHTML = regionHtml;
-            i++;
-          }
-
-          show();
-          setInterval(show, 5000);
-        })
-        .catch(err => {
-          document.getElementById('shipping-forecast-placeholder').textContent =
-            'Unable to load shipping forecast.';
-          console.error(err);
-        });
-    });
-  </script>
 </body>
 </html>
