@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Cole Chapman</title>
 
-  <!-- Projects-only stylesheet -->
-  <link rel="stylesheet" href="projects.css?v=3" />
+  <link rel="stylesheet" href="projects.css?v=8" />
 </head>
 
 <body>
@@ -53,82 +52,78 @@
     <div id="center">
       <div class="sectionTitle">Projects</div>
       <div class="sectionText">
-        This page contains downloads for datasets and Python code used in my work.
+        Selected projects in applied mathematics, numerical methods, and data analysis.
       </div>
 
       <div class="hr"></div>
 
-      <div class="blockTitle">Datasets</div>
-
+      <!-- Project 1 -->
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
           <div class="entryTitle">
-            <a href="./energy_etfs_data.csv" download>Energy ETFs Data</a>
+            Nonnegative Matrix Factorization (NMF) for Dimensionality Reduction
           </div>
-          <div class="entryMeta">CSV dataset</div>
+
+          <div class="entryMeta">
+            Implemented and compared update rules for NMF as a dimensionality reduction / low-rank factorization method.
+            Starting from a full (nonnegative) data matrix, the project constructs a lower-dimensional representation via
+            matrix factors and evaluates convergence behavior and reconstruction quality across:
+            <b>HALS</b>, <b>FAST-HALS</b>, and <b>multiplicative updates</b> (ALS-style).
+          </div>
+
+          <div class="itemLinks">
+            <a href="https://github.com/REPLACE_ME/nmf-dim-reduction" target="_blank" rel="noopener">GitHub repository</a>
+          </div>
         </div>
       </div>
 
+      <!-- Project 2 -->
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
           <div class="entryTitle">
-            <a href="./high-volatility_stocks_data.csv" download>High Volatility Stocks</a>
+            Solutions to Vasilik’s SQL Practice Problems
           </div>
-          <div class="entryMeta">CSV dataset</div>
+
+          <div class="entryMeta">
+            Completed and documented solutions to Vasilik’s SQL practice set. Includes query design,
+            joins, grouping/aggregation, window functions where applicable, and clear formatting so results
+            are easy to verify.
+          </div>
+
+          <div class="itemLinks">
+            <a href="https://github.com/REPLACE_ME/vasilik-sql-solutions" target="_blank" rel="noopener">GitHub repository</a>
+          </div>
         </div>
       </div>
 
+      <!-- Project 3 -->
       <div class="entry">
         <div class="bullet" aria-hidden="true"></div>
         <div class="entryBody">
           <div class="entryTitle">
-            <a href="./s&amp;p_index_funds_data.csv" download>S&amp;P Index Funds</a>
+            Dashboard for Data Visualization
           </div>
-          <div class="entryMeta">CSV dataset</div>
-        </div>
-      </div>
 
-      <div class="hr"></div>
-
-      <div class="blockTitle">Python Code</div>
-
-      <div class="entry">
-        <div class="bullet" aria-hidden="true"></div>
-        <div class="entryBody">
-          <div class="entryTitle">
-            <a href="./FAST_HALS.py" download>FAST_HALS.py</a>
+          <div class="entryMeta">
+            A compact dashboard project focused on clean data visualization and basic analytics:
+            data ingestion/cleaning, summary metrics, and interactive or well-structured plots/tables
+            suitable for communicating results to non-technical stakeholders.
           </div>
-          <div class="entryMeta">Python source</div>
-        </div>
-      </div>
 
-      <div class="entry">
-        <div class="bullet" aria-hidden="true"></div>
-        <div class="entryBody">
-          <div class="entryTitle">
-            <a href="./HALS.py" download>HALS.py</a>
+          <div class="itemLinks">
+            <a href="https://github.com/REPLACE_ME/data-viz-dashboard" target="_blank" rel="noopener">GitHub repository</a>
           </div>
-          <div class="entryMeta">Python source</div>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="bullet" aria-hidden="true"></div>
-        <div class="entryBody">
-          <div class="entryTitle">
-            <a href="./multiplicative_update.py" download>multiplicative_update.py</a>
-          </div>
-          <div class="entryMeta">Python source</div>
         </div>
       </div>
 
       <div class="footerSpace"></div>
     </div>
 
-    <!-- RIGHT COLUMN (empty like Steklov layout) -->
+    <!-- RIGHT COLUMN -->
     <div id="right"></div>
   </div>
 </body>
 </html>
+
